@@ -1,0 +1,25 @@
+{
+    "olisParamsAndScriptsApp": {
+        "authorizationSet" : {
+            "home": {
+                "title": "AuthorizationSets",
+                "createLabel": "Créer un nouveau AuthorizationSet",
+                "createOrEditLabel": "Créer ou éditer un AuthorizationSet"
+            },
+            "created": "Un nouveau AuthorizationSet a été créé avec l'identifiant {{ param }}",
+            "updated": "Le AuthorizationSet avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le AuthorizationSet avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le AuthorizationSet {{ id }} ?"
+            },
+            "detail": {
+                "title": "AuthorizationSet"
+            },
+            "code": "Code",
+            "name": "Name",
+            "authorizationLink": "AuthorizationLink",
+            "authorizationSetLink": "AuthorizationSetLink"
+        }
+    }
+}
+

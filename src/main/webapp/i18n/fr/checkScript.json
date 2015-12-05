@@ -1,0 +1,23 @@
+{
+    "olisParamsAndScriptsApp": {
+        "checkScript" : {
+            "home": {
+                "title": "CheckScripts",
+                "createLabel": "Créer un nouveau CheckScript",
+                "createOrEditLabel": "Créer ou éditer un CheckScript"
+            },
+            "created": "Un nouveau CheckScript a été créé avec l'identifiant {{ param }}",
+            "updated": "Le CheckScript avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le CheckScript avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le CheckScript {{ id }} ?"
+            },
+            "detail": {
+                "title": "CheckScript"
+            },
+            "script": "Script",
+            "prompt": "Prompt"
+        }
+    }
+}
+

@@ -1,0 +1,109 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myDatasourceLabel" translate="olisParamsAndScriptsApp.datasource.home.createOrEditLabel">Create or edit or duplicate a Datasource</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="datasource.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.datasource.condition" for="field_condition">Condition</label>
+            <textarea class="form-control" name="condition" id="field_condition" ng-model="datasource.condition"></textarea>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.datasource.type" for="field_type">Type</label>
+            <select class="form-control" name="type" ng-model="datasource.type" id="field_type">
+                <option value="BIF" translate="olisParamsAndScriptsApp.DatasourceType.BIF">BIF</option>
+                <option value="WEB" translate="olisParamsAndScriptsApp.DatasourceType.WEB">WEB</option>
+                <option value="LOV" translate="olisParamsAndScriptsApp.DatasourceType.LOV">LOV</option>
+                <option value="SCR" translate="olisParamsAndScriptsApp.DatasourceType.SCR">SCR</option>
+                <option value="SQL" translate="olisParamsAndScriptsApp.DatasourceType.SQL">SQL</option>
+                <option value="SIM" translate="olisParamsAndScriptsApp.DatasourceType.SIM">SIM</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.datasource.value" for="field_value">Value</label>
+            <textarea class="form-control" name="value" id="field_value" ng-model="datasource.value"></textarea>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.datasource.code" for="field_code">Code</label>
+            <input type="text" class="form-control" name="code" id="field_code"
+                    ng-model="datasource.code"
+                    ng-maxlength="50" />
+            <div ng-show="editForm.code.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.code.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.datasource.datasourceLink" for="field_datasourceLink">DatasourceLink</label>
+            <input type="text" class="form-control" name="datasourceLink" id="field_datasourceLink"
+                    ng-model="datasource.datasourceLink"
+                    ng-maxlength="3" />
+            <div ng-show="editForm.datasourceLink.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.datasourceLink.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="3">
+                    This field cannot be longer than 3 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.datasource.sql" for="field_sql">Sql</label>
+            <textarea class="form-control" name="sql" id="field_sql" ng-model="datasource.sql"></textarea>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.datasource.script" for="field_script">Script</label>
+            <textarea class="form-control" name="script" id="field_script" ng-model="datasource.script"></textarea>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.datasource.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="datasource.description"
+                    ng-maxlength="50" />
+            <div ng-show="editForm.description.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.description.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.datasource.url" for="field_url">Url</label>
+            <input type="text" class="form-control" name="url" id="field_url"
+                    ng-model="datasource.url"
+                    ng-maxlength="1000" />
+            <div ng-show="editForm.url.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.url.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="1000">
+                    This field cannot be longer than 1000 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.datasource.request" for="field_request">Request</label>
+            <textarea class="form-control" name="request" id="field_request" ng-model="datasource.request"></textarea>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.datasource.response" for="field_response">Response</label>
+            <textarea class="form-control" name="response" id="field_response" ng-model="datasource.response"></textarea>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,122 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "promptPosition",
+      "relationshipFieldName": "promptPosition",
+      "otherEntityName": "promptPosition",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "prompt"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "datasourcePosition",
+      "relationshipFieldName": "datasourcePosition",
+      "otherEntityName": "datasourcePosition",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "prompt"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "graphicalComponentLink",
+      "relationshipFieldName": "graphicalComponentLink",
+      "otherEntityName": "graphicalComponentLink",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "prompt"
+    },
+    {
+      "relationshipId": 4,
+      "relationshipName": "graphicalComponentParam",
+      "relationshipFieldName": "graphicalComponentParam",
+      "otherEntityName": "graphicalComponentParam",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "prompt"
+    },
+    {
+      "relationshipId": 5,
+      "relationshipName": "checkScript",
+      "relationshipFieldName": "checkScript",
+      "otherEntityName": "checkScript",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "prompt"
+    },
+    {
+      "relationshipId": 6,
+      "relationshipName": "parameterDependencyFather",
+      "relationshipFieldName": "ParameterDependencyFather",
+      "otherEntityName": "parameterDependency",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "promptFather"
+    },
+    {
+      "relationshipId": 7,
+      "relationshipName": "parameterDependencyChild",
+      "relationshipFieldName": "ParameterDependencyChild",
+      "otherEntityName": "parameterDependency",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "promptChild"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 50
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "systemName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 255
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "type",
+      "fieldType": "PromptType",
+      "fieldValues": "STR,INT",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "transformationScript",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "visibleName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 50
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "defaultValueScript",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "order",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20151122200754",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "PAR"
+}

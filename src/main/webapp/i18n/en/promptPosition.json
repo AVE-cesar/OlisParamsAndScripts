@@ -1,0 +1,23 @@
+{
+    "olisParamsAndScriptsApp": {
+        "promptPosition" : {
+            "home": {
+                "title": "PromptPositions",
+                "createLabel": "Create a new PromptPosition",
+                "createOrEditLabel": "Create or edit a PromptPosition"
+            },
+            "created": "A new PromptPosition is created with identifier {{ param }}",
+            "updated": "A PromptPosition is updated with identifier {{ param }}",
+            "deleted": "A PromptPosition is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete PromptPosition {{ id }}?"
+            },
+            "detail": {
+                "title": "PromptPosition"
+            },
+            "order": "Order",
+            "report": "Report",
+            "prompt": "Prompt"
+        }
+    }
+}

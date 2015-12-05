@@ -1,0 +1,86 @@
+
+<div>
+    <h2><span translate="olisParamsAndScriptsApp.authorizationSetLink.detail.title">AuthorizationSetLink</span> {{authorizationSetLink.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.authorizationSetLink.status">Status</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{authorizationSetLink.status}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.authorizationSetLink.validityStartDate">ValidityStartDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{authorizationSetLink.validityStartDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.authorizationSetLink.validityEndDate">ValidityEndDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{authorizationSetLink.validityEndDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.authorizationSetLink.creationDate">CreationDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{authorizationSetLink.creationDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.authorizationSetLink.creatorUserId">CreatorUserId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{authorizationSetLink.creatorUserId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.authorizationSetLink.modificationDate">ModificationDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{authorizationSetLink.modificationDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.authorizationSetLink.updatorUserId">UpdatorUserId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{authorizationSetLink.updatorUserId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.authorizationSetLink.agacUser">agacUser</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="aGACUser.detail({id:authorizationSetLink.agacUser.id})">{{authorizationSetLink.agacUser.id}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

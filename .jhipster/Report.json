@@ -1,0 +1,89 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "promptPosition",
+      "relationshipFieldName": "promptPosition",
+      "otherEntityName": "promptPosition",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "report"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 256
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "triggerCode",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 3
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "type",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 3
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "domain",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 3
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "generationType",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "specific",
+      "fieldType": "Specific",
+      "fieldValues": "YES,NO"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "raw",
+      "fieldType": "Raw",
+      "fieldValues": "Y,N",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "fatRawReport",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "userAccess",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 10
+    }
+  ],
+  "changelogDate": "20151122200754",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "Les rapports"
+}

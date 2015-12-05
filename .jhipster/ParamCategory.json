@@ -1,0 +1,27 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "parameters",
+      "relationshipFieldName": "Parameters",
+      "otherEntityName": "globalParameter",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "category"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 255
+    }
+  ],
+  "changelogDate": "20151117203130",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "les prompts"
+}

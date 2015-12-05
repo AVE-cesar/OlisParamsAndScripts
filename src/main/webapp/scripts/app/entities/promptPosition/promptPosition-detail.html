@@ -1,0 +1,64 @@
+
+<div>
+    <h2><span translate="olisParamsAndScriptsApp.promptPosition.detail.title">PromptPosition</span> {{promptPosition.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.promptPosition.order">Order</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{promptPosition.order}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.promptPosition.report">report</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="report.detail({id:promptPosition.report.id})">{{promptPosition.report.name}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.promptPosition.prompt">prompt</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="prompt.detail({id:promptPosition.prompt.id})">{{promptPosition.prompt.name}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+     <button type="submit"
+            ui-sref="promptPosition.edit({id:promptPosition.id})"
+            class="btn btn-primary btn-sm">
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+    </button>
+    
+    <button type="submit"
+            ui-sref="promptPosition.duplicate({id:promptPosition.id})"
+            class="btn btn-warning btn-sm">
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.duplicate"> Duplicate</span>
+    </button>
+    
+    
+     <button type="submit"
+              ui-sref="promptPosition.delete({id:promptPosition.id})"
+              class="btn btn-danger btn-sm">
+          <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+      </button>
+</div>

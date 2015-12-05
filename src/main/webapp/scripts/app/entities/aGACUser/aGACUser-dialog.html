@@ -1,0 +1,203 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myAGACUserLabel" translate="olisParamsAndScriptsApp.aGACUser.home.createOrEditLabel">Create or edit a AGACUser</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="aGACUser.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.status" for="field_status">Status</label>
+            <input type="number" class="form-control" name="status" id="field_status"
+                    ng-model="aGACUser.status"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.login" for="field_login">Login</label>
+            <input type="text" class="form-control" name="login" id="field_login"
+                    ng-model="aGACUser.login"
+                    ng-maxlength="20" />
+            <div ng-show="editForm.login.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.login.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.externalId" for="field_externalId">ExternalId</label>
+            <input type="text" class="form-control" name="externalId" id="field_externalId"
+                    ng-model="aGACUser.externalId"
+                    ng-maxlength="25" />
+            <div ng-show="editForm.externalId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.externalId.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="25">
+                    This field cannot be longer than 25 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.gender" for="field_gender">Gender</label>
+            <select class="form-control" name="gender" ng-model="aGACUser.gender" id="field_gender">
+                <option value="MR" translate="olisParamsAndScriptsApp.Gender.MR">MR</option>
+                <option value="M" translate="olisParamsAndScriptsApp.Gender.M">M</option>
+                <option value="MS" translate="olisParamsAndScriptsApp.Gender.MS">MS</option>
+                <option value="MRS" translate="olisParamsAndScriptsApp.Gender.MRS">MRS</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.firstName" for="field_firstName">FirstName</label>
+            <input type="text" class="form-control" name="firstName" id="field_firstName"
+                    ng-model="aGACUser.firstName"
+                    ng-maxlength="20" />
+            <div ng-show="editForm.firstName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.firstName.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.lastName" for="field_lastName">LastName</label>
+            <input type="text" class="form-control" name="lastName" id="field_lastName"
+                    ng-model="aGACUser.lastName"
+                    ng-maxlength="50" />
+            <div ng-show="editForm.lastName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.lastName.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="50">
+                    This field cannot be longer than 50 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.language" for="field_language">Language</label>
+            <select class="form-control" name="language" ng-model="aGACUser.language" id="field_language">
+                <option value="FR" translate="olisParamsAndScriptsApp.Language.FR">FR</option>
+                <option value="EN" translate="olisParamsAndScriptsApp.Language.EN">EN</option>
+                <option value="DE" translate="olisParamsAndScriptsApp.Language.DE">DE</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="aGACUser.email"
+                    ng-maxlength="100" />
+            <div ng-show="editForm.email.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.email.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="100">
+                    This field cannot be longer than 100 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.phone" for="field_phone">Phone</label>
+            <input type="text" class="form-control" name="phone" id="field_phone"
+                    ng-model="aGACUser.phone"
+                    ng-maxlength="20" />
+            <div ng-show="editForm.phone.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.phone.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.cellularPhone" for="field_cellularPhone">CellularPhone</label>
+            <input type="text" class="form-control" name="cellularPhone" id="field_cellularPhone"
+                    ng-model="aGACUser.cellularPhone"
+                    ng-maxlength="20" />
+            <div ng-show="editForm.cellularPhone.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.cellularPhone.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.fax" for="field_fax">Fax</label>
+            <input type="text" class="form-control" name="fax" id="field_fax"
+                    ng-model="aGACUser.fax"
+                    ng-maxlength="20" />
+            <div ng-show="editForm.fax.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fax.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.authenticationType" for="field_authenticationType">AuthenticationType</label>
+            <input type="number" class="form-control" name="authenticationType" id="field_authenticationType"
+                    ng-model="aGACUser.authenticationType"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.theme" for="field_theme">Theme</label>
+            <input type="text" class="form-control" name="theme" id="field_theme"
+                    ng-model="aGACUser.theme"
+                    ng-maxlength="20" />
+            <div ng-show="editForm.theme.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.theme.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.creationDate" for="field_creationDate">CreationDate</label>
+            <input type="date" class="form-control" name="creationDate" id="field_creationDate"
+                    ng-model="aGACUser.creationDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.creatorUserId" for="field_creatorUserId">CreatorUserId</label>
+            <input type="number" class="form-control" name="creatorUserId" id="field_creatorUserId"
+                    ng-model="aGACUser.creatorUserId"
+                    required />
+            <div ng-show="editForm.creatorUserId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.creatorUserId.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.creatorUserId.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.modificationDate" for="field_modificationDate">ModificationDate</label>
+            <input type="date" class="form-control" name="modificationDate" id="field_modificationDate"
+                    ng-model="aGACUser.modificationDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.updatorUserId" for="field_updatorUserId">UpdatorUserId</label>
+            <input type="number" class="form-control" name="updatorUserId" id="field_updatorUserId"
+                    ng-model="aGACUser.updatorUserId"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUser.agacUserLink" for="field_agacUserLink">agacUserLink</label>
+            <select class="form-control" id="field_agacUserLink" name="agacUserLink" ng-model="aGACUser.agacUserLink" ng-options="aGACUserLink as aGACUserLink.id for aGACUserLink in agacuserlinks track by aGACUserLink.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,30 @@
+{
+    "olisParamsAndScriptsApp": {
+        "profileLink" : {
+            "home": {
+                "title": "ProfileLinks",
+                "createLabel": "Créer un nouveau ProfileLink",
+                "createOrEditLabel": "Créer ou éditer un ProfileLink"
+            },
+            "created": "Un nouveau ProfileLink a été créé avec l'identifiant {{ param }}",
+            "updated": "Le ProfileLink avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le ProfileLink avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le ProfileLink {{ id }} ?"
+            },
+            "detail": {
+                "title": "ProfileLink"
+            },
+            "status": "Status",
+            "validityStartDate": "ValidityStartDate",
+            "validityEndDate": "ValidityEndDate",
+            "creationDate": "CreationDate",
+            "creatorUserId": "CreatorUserId",
+            "modificationDate": "ModificationDate",
+            "updatorUserId": "UpdatorUserId",
+            "agacUser": "AgacUser",
+            "profile": "Profile"
+        }
+    }
+}
+

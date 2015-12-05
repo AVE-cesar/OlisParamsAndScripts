@@ -1,0 +1,31 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "report",
+      "relationshipFieldName": "report",
+      "otherEntityName": "report",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "prompt",
+      "relationshipFieldName": "prompt",
+      "otherEntityName": "prompt",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "order",
+      "fieldType": "Long"
+    }
+  ],
+  "changelogDate": "20151122200754",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "RPT_PAR_LNK"
+}

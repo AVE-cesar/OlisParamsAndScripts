@@ -1,0 +1,64 @@
+
+<div>
+    <h2><span translate="olisParamsAndScriptsApp.graphicalComponentLink.detail.title">GraphicalComponentLink</span> {{graphicalComponentLink.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.graphicalComponentLink.mode">Mode</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'olisParamsAndScriptsApp.Mode.' + graphicalComponentLink.mode}}">{{graphicalComponentLink.mode}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.graphicalComponentLink.prompt">prompt</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="prompt.detail({id:graphicalComponentLink.prompt.id})">{{graphicalComponentLink.prompt.name}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.graphicalComponentLink.graphicalComponent">graphicalComponent</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="graphicalComponent.detail({id:graphicalComponentLink.graphicalComponent.id})">{{graphicalComponentLink.graphicalComponent.description}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+    <button type="submit"
+            ui-sref="graphicalComponentLink.edit({id:graphicalComponentLink.id})"
+            class="btn btn-primary btn-sm">
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+    </button>
+    
+    <button type="submit"
+            ui-sref="graphicalComponentLink.duplicate({id:graphicalComponentLink.id})"
+            class="btn btn-warning btn-sm">
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.duplicate"> Duplicate</span>
+    </button>
+    
+    
+     <button type="submit"
+              ui-sref="graphicalComponentLink.delete({id:graphicalComponentLink.id})"
+              class="btn btn-danger btn-sm">
+          <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+      </button>
+</div>

@@ -1,0 +1,207 @@
+
+<div>
+    <h2><span translate="olisParamsAndScriptsApp.prompt.detail.title">Prompt</span> {{prompt.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.prompt.name">Name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{prompt.name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.prompt.systemName">SystemName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{prompt.systemName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.prompt.type">Type</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'olisParamsAndScriptsApp.PromptType.' + prompt.type}}">{{prompt.type}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.prompt.transformationScript">TransformationScript</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{prompt.transformationScript}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.prompt.visibleName">VisibleName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{prompt.visibleName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.prompt.defaultValueScript">DefaultValueScript</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{prompt.defaultValueScript}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.prompt.order">Order</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{prompt.order}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+	<br><br>
+	<section ng-init="tab=1">
+		<ul class="nav nav-pills">
+			<li ng-class="{active:tab === 1}"> <a href ng-click="tab=1">Graphical Comp. Link</a></li>
+			<li ng-class="{active:tab === 2}"> <a href ng-click="tab=2">Graphical Comp. Parameter</a></li>
+			<li ng-class="{active:tab === 3}"> <a href ng-click="tab=3">Datasource Position</a></li>
+			<li ng-class="{active:tab === 4}"> <a href ng-click="tab=4">Prompt dependency</a></li>
+		</ul>
+	</section>
+
+	<div class="panel" ng-show="tab===1">
+		<div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Mode</th>
+            </tr>
+            </thead>
+            <tbody ng-repeat="graphCompLink in graphCompLinks">
+             <tr>
+                <td>
+                    <span class="form-control-static"><a ui-sref="graphicalComponentLink.detail({id:graphCompLink.id})">{{graphCompLink.id}}</a></span>
+                </td>
+                <td>
+                   <span class="form-control-static">{{graphCompLink.mode}}</span> 
+                </td>
+            </tr>    
+            </tbody>            
+        </table>
+    	</div>
+	</div>
+	<div class="panel" ng-show="tab===2">
+		<div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Value</th>
+                <th>Mode</th>
+            </tr>
+            </thead>
+            <tbody ng-repeat="graphCompParam in graphCompParams">
+             <tr>
+                <td>
+                    <span class="form-control-static"><a ui-sref="graphicalComponentParam.detail({id:graphCompParam.id})">{{graphCompParam.id}}</a></span>
+                </td>
+                <td>
+                   <span class="form-control-static">{{graphCompParam.name}}</span> 
+                </td>
+                <td>
+                   <span class="form-control-static">{{graphCompParam.value}}</span> 
+                </td>
+                <td>
+                   <span class="form-control-static">{{graphCompParam.mode}}</span> 
+                </td>
+            </tr>    
+            </tbody>
+         </table>
+         </div>
+	</div>
+	<div class="panel" ng-show="tab===3">
+		<div class="table-responsive">
+		<table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Order</th>
+            </tr>
+            </thead>            
+            <tbody ng-repeat="datasourcePosition in datasourcePositions">
+             <tr>
+                <td>
+                    <span class="form-control-static"><a ui-sref="datasourcePosition.detail({id:datasourcePosition.id})">{{datasourcePosition.id}}</a></span>
+                </td>
+                <td>
+                   <span class="form-control-static">{{datasourcePosition.order}}</span> 
+                </td>
+            </tr>    
+            </tbody>
+        </table>
+    	</div>
+	</div>
+	<div class="panel" ng-show="tab===4">
+		<div class="table-responsive">
+		<table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Child</th>
+                <th>Type</th>
+            </tr>
+            </thead>            
+            <tbody ng-repeat="parameterDependency in parameterDependencys">
+             <tr>
+                <td>
+                    <span class="form-control-static"><a ui-sref="parameterDependency.detail({id:datasourcePosition.id})">{{parameterDependency.id}}</a></span>
+                </td>
+                <td>
+                   <span class="form-control-static"><a ui-sref="prompt.detail({id:parameterDependency.promptChild.id})">{{parameterDependency.promptChild.name}}</a></span> 
+                </td>
+                <td>
+                   <span class="form-control-static">{{parameterDependency.type}}</span> 
+                </td>
+            </tr>    
+            </tbody>
+        </table>
+    	</div>
+	</div>
+	
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+    <button type="submit"
+            ui-sref="prompt.edit({id:prompt.id})"
+            class="btn btn-primary btn-sm">
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+    </button>
+    
+    <button type="submit"
+            ui-sref="prompt.duplicate({id:prompt.id})"
+            class="btn btn-warning btn-sm">
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.duplicate"> Duplicate</span>
+    </button>
+    
+    
+     <button type="submit"
+              ui-sref="prompt.delete({id:prompt.id})"
+              class="btn btn-danger btn-sm">
+          <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+      </button>
+</div>

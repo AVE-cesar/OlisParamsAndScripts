@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="olisParamsAndScriptsApp.checkScript.detail.title">CheckScript</span> {{checkScript.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.checkScript.script">Script</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{checkScript.script}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.checkScript.prompt">prompt</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="prompt.detail({id:checkScript.prompt.id})">{{checkScript.prompt.name}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

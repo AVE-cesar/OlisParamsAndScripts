@@ -1,0 +1,124 @@
+
+<div>
+    <h2><span translate="olisParamsAndScriptsApp.report.detail.title">Report</span> {{report.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.report.name">Name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{report.name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.report.triggerCode">TriggerCode</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{report.triggerCode}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.report.type">Type</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{report.type}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.report.domain">Domain</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{report.domain}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.report.generationType">GenerationType</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{report.generationType}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.report.specific">Specific</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'olisParamsAndScriptsApp.Specific.' + report.specific}}">{{report.specific}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.report.raw">Raw</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'olisParamsAndScriptsApp.Raw.' + report.raw}}">{{report.raw}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.report.fatRawReport">FatRawReport</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{report.fatRawReport}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.report.userAccess">UserAccess</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{report.userAccess}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+	<br><br>
+	<section ng-init="tab=1">
+		<ul class="nav nav-pills">
+			<li ng-class="{active:tab === 1}"> <a href ng-click="tab=1">Prompts</a></li>
+		</ul>
+	</section>
+
+	<div class="panel" ng-show="tab===1">
+		<div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Order</th>
+            </tr>
+            </thead>
+            <tbody ng-repeat="promptPosition in promptPositions">
+             <tr>
+                <td>
+                    <span class="form-control-static"><a ui-sref="promptPosition.detail({id:promptPosition.id})">{{promptPosition.id}}</a></span>
+                </td>
+                <td>
+                   <span class="form-control-static">{{promptPosition.order}}</span> 
+                </td>
+            </tr>    
+            </tbody>
+        </table>
+    	</div>
+	</div>
+	
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

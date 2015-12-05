@@ -1,0 +1,40 @@
+{
+    "olisParamsAndScriptsApp": {
+        "aGACUser" : {
+            "home": {
+                "title": "AGACUsers",
+                "createLabel": "Créer un nouveau AGACUser",
+                "createOrEditLabel": "Créer ou éditer un AGACUser"
+            },
+            "created": "Un nouveau AGACUser a été créé avec l'identifiant {{ param }}",
+            "updated": "Le AGACUser avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le AGACUser avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le AGACUser {{ id }} ?"
+            },
+            "detail": {
+                "title": "AGACUser"
+            },
+            "status": "Status",
+            "login": "Login",
+            "externalId": "ExternalId",
+            "gender": "Gender",
+            "firstName": "FirstName",
+            "lastName": "LastName",
+            "language": "Language",
+            "email": "Email",
+            "phone": "Phone",
+            "cellularPhone": "CellularPhone",
+            "fax": "Fax",
+            "authenticationType": "AuthenticationType",
+            "theme": "Theme",
+            "creationDate": "CreationDate",
+            "creatorUserId": "CreatorUserId",
+            "modificationDate": "ModificationDate",
+            "updatorUserId": "UpdatorUserId",
+            "authorizationSetLink": "AuthorizationSetLink",
+            "agacUserLink": "AgacUserLink"
+        }
+    }
+}
+

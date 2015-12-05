@@ -1,0 +1,80 @@
+
+<div>
+    <h2><span translate="olisParamsAndScriptsApp.graphicalComponentParam.detail.title">GraphicalComponentParam</span> {{graphicalComponentParam.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.graphicalComponentParam.name">Name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{graphicalComponentParam.name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.graphicalComponentParam.value">Value</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{graphicalComponentParam.value}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.graphicalComponentParam.mode">Mode</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'olisParamsAndScriptsApp.Mode.' + graphicalComponentParam.mode}}">{{graphicalComponentParam.mode}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.graphicalComponentParam.prompt">prompt</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="prompt.detail({id:graphicalComponentParam.prompt.id})">{{graphicalComponentParam.prompt.name}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.graphicalComponentParam.graphicalComponent">graphicalComponent</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="graphicalComponent.detail({id:graphicalComponentParam.graphicalComponent.id})">{{graphicalComponentParam.graphicalComponent.description}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+     <button type="submit"
+            ui-sref="graphicalComponentParam.edit({id:graphicalComponentParam.id})"
+            class="btn btn-primary btn-sm">
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+    </button>
+    
+    <button type="submit"
+            ui-sref="graphicalComponentParam.duplicate({id:graphicalComponentParam.id})"
+            class="btn btn-warning btn-sm">
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.duplicate"> Duplicate</span>
+    </button>
+    
+    
+     <button type="submit"
+              ui-sref="graphicalComponentParam.delete({id:graphicalComponentParam.id})"
+              class="btn btn-danger btn-sm">
+          <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+      </button>
+</div>

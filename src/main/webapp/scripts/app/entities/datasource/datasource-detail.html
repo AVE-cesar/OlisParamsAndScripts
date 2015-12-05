@@ -1,0 +1,130 @@
+
+<div>
+    <h2><span translate="olisParamsAndScriptsApp.datasource.detail.title">Datasource</span> {{datasource.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.datasource.condition">Condition</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{datasource.condition}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.datasource.type">Type</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'olisParamsAndScriptsApp.DatasourceType.' + datasource.type}}">{{datasource.type}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.datasource.value">Value</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{datasource.value}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.datasource.code">Code</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{datasource.code}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.datasource.datasourceLink">DatasourceLink</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{datasource.datasourceLink}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.datasource.sql">Sql</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{datasource.sql}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.datasource.script">Script</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{datasource.script}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.datasource.description">Description</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{datasource.description}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.datasource.url">Url</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{datasource.url}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.datasource.request">Request</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{datasource.request}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.datasource.response">Response</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{datasource.response}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+    
+    
+    <button type="submit"
+            ui-sref="datasource.edit({id:datasource.id})"
+            class="btn btn-primary btn-sm">
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+    </button>
+    
+    <button type="submit"
+            ui-sref="datasource.duplicate({id:datasource.id})"
+            class="btn btn-warning btn-sm">
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.duplicate"> Duplicate</span>
+    </button>
+    
+    
+     <button type="submit"
+              ui-sref="datasource.delete({id:datasource.id})"
+              class="btn btn-danger btn-sm">
+          <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+      </button>
+</div>

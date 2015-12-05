@@ -1,0 +1,62 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "agacUser",
+      "relationshipFieldName": "agacUser",
+      "otherEntityName": "aGACUser",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "profile",
+      "relationshipFieldName": "profile",
+      "otherEntityName": "profile",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "profileLink"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "status",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "validityStartDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "validityEndDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "creationDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "creatorUserId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "modificationDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "updatorUserId",
+      "fieldType": "Long"
+    }
+  ],
+  "changelogDate": "20151205151743",
+  "dto": "no",
+  "pagination": "no",
+  "fieldsContainLocalDate": true,
+  "fieldsContainCustomTime": true
+}

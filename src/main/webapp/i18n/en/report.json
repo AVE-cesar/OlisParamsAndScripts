@@ -1,0 +1,30 @@
+{
+    "olisParamsAndScriptsApp": {
+        "report" : {
+            "home": {
+                "title": "Reports",
+                "createLabel": "Create a new Report",
+                "createOrEditLabel": "Create or edit a Report"
+            },
+            "created": "A new Report is created with identifier {{ param }}",
+            "updated": "A Report is updated with identifier {{ param }}",
+            "deleted": "A Report is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Report {{ id }}?"
+            },
+            "detail": {
+                "title": "Report"
+            },
+            "name": "Name",
+            "triggerCode": "TriggerCode",
+            "type": "Type",
+            "domain": "Domain",
+            "generationType": "GenerationType",
+            "specific": "Specific",
+            "raw": "Raw",
+            "fatRawReport": "FatRawReport",
+            "userAccess": "UserAccess",
+            "promptPosition": "PromptPosition"
+        }
+    }
+}

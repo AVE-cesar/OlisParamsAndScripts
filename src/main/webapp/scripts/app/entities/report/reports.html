@@ -1,0 +1,73 @@
+<div>
+    <h2 translate="olisParamsAndScriptsApp.report.home.title">Reports</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="report.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="olisParamsAndScriptsApp.report.home.createLabel">Create a new Report</span>
+                </button>
+            </div>
+            <div class="col-md-8">
+                <form name="searchForm" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="query">
+                    </div>
+                    <button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a Report</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.field.id">ID</th>
+                    <th translate="olisParamsAndScriptsApp.report.name">Name</th>
+                    <th translate="olisParamsAndScriptsApp.report.triggerCode">TriggerCode</th>
+                    <th translate="olisParamsAndScriptsApp.report.type">Type</th>
+                    <th translate="olisParamsAndScriptsApp.report.domain">Domain</th>
+                    <th translate="olisParamsAndScriptsApp.report.generationType">GenerationType</th>
+                    <th translate="olisParamsAndScriptsApp.report.specific">Specific</th>
+                    <th translate="olisParamsAndScriptsApp.report.raw">Raw</th>
+                    <th translate="olisParamsAndScriptsApp.report.fatRawReport">FatRawReport</th>
+                    <th translate="olisParamsAndScriptsApp.report.userAccess">UserAccess</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="report in reports track by report.id">
+                    <td><a ui-sref="report.detail({id:report.id})">{{report.id}}</a></td>
+                    <td>{{report.name}}</td>
+                    <td>{{report.triggerCode}}</td>
+                    <td>{{report.type}}</td>
+                    <td>{{report.domain}}</td>
+                    <td>{{report.generationType}}</td>
+                    <td translate="{{'olisParamsAndScriptsApp.Specific.' + report.specific}}">{{report.specific}}</td>
+                    <td translate="{{'olisParamsAndScriptsApp.Raw.' + report.raw}}">{{report.raw}}</td>
+                    <td>{{report.fatRawReport}}</td>
+                    <td>{{report.userAccess}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="report.detail({id:report.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="report.edit({id:report.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="report.delete({id:report.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

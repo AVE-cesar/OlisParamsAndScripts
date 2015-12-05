@@ -1,0 +1,46 @@
+
+<div>
+    <h2><span translate="olisParamsAndScriptsApp.aGACAuthorization.detail.title">AGACAuthorization</span> {{aGACAuthorization.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACAuthorization.code">Code</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACAuthorization.code}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACAuthorization.name">Name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACAuthorization.name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACAuthorization.authorizationSetLink">authorizationSetLink</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="authorizationSetLink.detail({id:aGACAuthorization.authorizationSetLink.id})">{{aGACAuthorization.authorizationSetLink.id}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

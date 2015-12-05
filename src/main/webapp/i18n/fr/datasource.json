@@ -1,0 +1,33 @@
+{
+    "olisParamsAndScriptsApp": {
+        "datasource" : {
+            "home": {
+                "title": "Datasources",
+                "createLabel": "Créer un nouveau Datasource",
+                "createOrEditLabel": "Créer ou éditer un Datasource"
+            },
+            "created": "Un nouveau Datasource a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Datasource avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Datasource avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Datasource {{ id }} ?"
+            },
+            "detail": {
+                "title": "Datasource"
+            },
+            "condition": "Condition",
+            "type": "Type",
+            "value": "Value",
+            "code": "Code",
+            "datasourceLink": "DatasourceLink",
+            "sql": "Sql",
+            "script": "Script",
+            "description": "Description",
+            "url": "Url",
+            "request": "Request",
+            "response": "Response",
+            "datasourcePosition": "DatasourcePosition"
+        }
+    }
+}
+

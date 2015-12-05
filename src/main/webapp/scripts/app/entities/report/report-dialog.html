@@ -1,0 +1,122 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myReportLabel" translate="olisParamsAndScriptsApp.report.home.createOrEditLabel">Create or edit a Report</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="report.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.report.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="report.name"
+                    required ng-maxlength="256" />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.name.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="256">
+                    This field cannot be longer than 256 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.report.triggerCode" for="field_triggerCode">TriggerCode</label>
+            <input type="text" class="form-control" name="triggerCode" id="field_triggerCode"
+                    ng-model="report.triggerCode"
+                    ng-maxlength="3" />
+            <div ng-show="editForm.triggerCode.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.triggerCode.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="3">
+                    This field cannot be longer than 3 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.report.type" for="field_type">Type</label>
+            <input type="text" class="form-control" name="type" id="field_type"
+                    ng-model="report.type"
+                    ng-maxlength="3" />
+            <div ng-show="editForm.type.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.type.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="3">
+                    This field cannot be longer than 3 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.report.domain" for="field_domain">Domain</label>
+            <input type="text" class="form-control" name="domain" id="field_domain"
+                    ng-model="report.domain"
+                    ng-maxlength="3" />
+            <div ng-show="editForm.domain.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.domain.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="3">
+                    This field cannot be longer than 3 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.report.generationType" for="field_generationType">GenerationType</label>
+            <input type="number" class="form-control" name="generationType" id="field_generationType"
+                    ng-model="report.generationType"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.report.specific" for="field_specific">Specific</label>
+            <select class="form-control" name="specific" ng-model="report.specific" id="field_specific">
+                <option value="YES" translate="olisParamsAndScriptsApp.Specific.YES">YES</option>
+                <option value="NO" translate="olisParamsAndScriptsApp.Specific.NO">NO</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.report.raw" for="field_raw">Raw</label>
+            <select class="form-control" name="raw" ng-model="report.raw" id="field_raw" required>
+                <option value="Y" translate="olisParamsAndScriptsApp.Raw.Y">Y</option>
+                <option value="N" translate="olisParamsAndScriptsApp.Raw.N">N</option>
+            </select>
+            <div ng-show="editForm.raw.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.raw.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.report.fatRawReport" for="field_fatRawReport">FatRawReport</label>
+            <input type="number" class="form-control" name="fatRawReport" id="field_fatRawReport"
+                    ng-model="report.fatRawReport"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.report.userAccess" for="field_userAccess">UserAccess</label>
+            <input type="text" class="form-control" name="userAccess" id="field_userAccess"
+                    ng-model="report.userAccess"
+                    ng-maxlength="10" />
+            <div ng-show="editForm.userAccess.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.userAccess.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="10">
+                    This field cannot be longer than 10 characters.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

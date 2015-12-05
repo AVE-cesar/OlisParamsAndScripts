@@ -1,0 +1,158 @@
+/**
+ * Les rapports
+ */
+entity Report{
+  name String required maxlength(256),
+  triggerCode String maxlength(3),
+  type String maxlength(3),
+  domain String maxlength(3),
+  generationType Integer,
+  specific Specific,
+  raw Raw required,
+  fatRawReport Long,
+  userAccess String maxlength(10)
+}
+
+/**
+ * PAR
+ */
+entity  Prompt {
+                name String required maxlength(50),
+                systemName String required maxlength(255),
+                type PromptType required,
+                transformationScript String,
+                visibleName String maxlength(50),
+                defaultValueScript String,
+                order Long required
+}
+/**
+ * PAR_CPO
+ */
+entity  GraphicalComponent {                
+                script String required,
+                description String maxlength(50)
+}
+/**
+ * PAR_CPO_LNK
+ */
+entity  GraphicalComponentLink {
+                mode Mode required
+}
+/**
+ * PAR_CPO_PAR
+ */
+entity  GraphicalComponentParam {
+                name String maxlength(50),
+                value String maxlength(50),
+                mode Mode
+}
+entity  GraphicalComponentParameter {
+                dummy String maxlength(50)
+}
+/**
+ * PAR_DTA_LST
+ */
+entity  Datasource {
+                condition String,
+                type DatasourceType,
+                value String,
+                code String maxlength(50),
+                datasourceLink String maxlength(3),
+                sql String,
+                script String,
+                description String maxlength(50),
+                url String maxlength(1000),
+                request String,
+                response String
+}
+/**
+ * PAR_DTA_LST_LNK
+ */
+entity  DatasourcePosition {
+                order Long
+}
+/**
+ * PAR_LNK
+ */
+entity  PromptDependency {
+                type DependencyType required,
+                checkOperation String maxlength(3),
+                script String
+}
+/**
+ * RPT_PAR_COT
+ */
+entity  CheckScript {
+                script String
+}
+/**
+ * RPT_PAR_LNK
+ */
+entity PromptPosition {             
+                order Long
+}
+
+
+relationship ManyToOne{
+  PromptPosition{report} to Report{promptPosition} 
+}
+ 
+relationship OneToMany{
+  Prompt{promptPosition} to PromptPosition{prompt}
+}
+
+relationship ManyToOne{
+  DatasourcePosition{prompt} to Prompt{datasourcePosition} 
+}
+ 
+relationship OneToMany{
+  Datasource{datasourcePosition} to DatasourcePosition{datasource}
+}
+
+relationship ManyToOne{
+  GraphicalComponentLink{prompt} to Prompt{graphicalComponentLink} 
+}
+ 
+relationship OneToMany{
+  GraphicalComponent{graphicalComponentLink} to GraphicalComponentLink{graphicalComponent}
+}
+
+relationship ManyToOne{
+  GraphicalComponentParam{prompt} to Prompt{graphicalComponentParam} 
+}
+ 
+relationship OneToMany{
+  GraphicalComponent{graphicalComponentParam} to GraphicalComponentParam{graphicalComponent}
+}
+ 
+
+relationship OneToMany{
+  Prompt{checkScript} to CheckScript{prompt} 
+}
+
+relationship OneToMany{
+  Prompt{PromptDependencyFather} to PromptDependency{promptFather} 
+}
+relationship OneToMany{
+  Prompt{PromptDependencyChild} to PromptDependency{promptChild} 
+}
+ 
+enum PromptType {
+    STR, INT
+} 
+enum DatasourceType {
+	BIF,WEB,LOV,SCR,SQL,SIM
+}
+enum DependencyType{
+	FIL,VIS,SCR
+}
+enum Mode {
+    ONL, OFF, ALL
+}  
+enum Specific {
+    YES, NO
+}  
+enum Raw {
+    Y, N
+}  
+  

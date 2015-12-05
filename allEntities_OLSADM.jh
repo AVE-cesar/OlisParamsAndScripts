@@ -1,0 +1,122 @@
+
+entity AGACAuthorization {
+  code String required maxlength(100),
+  name String maxlength(100)
+ }
+
+ 
+entity AuthorizationSet {
+  code String  maxlength(100),
+  name String maxlength(100)
+ }
+ 
+
+entity AGACOrganization {
+	code String  maxlength(100),
+	name String maxlength(100),
+    type Long,
+    status Long,
+  	rootOrganization Long,
+  	fatherOrganization Long,
+   	theme String maxlength(10),
+  	email String maxlength(30),
+  	level Level,
+  	Internal BoolValue,
+  	creationDate LocalDate required,
+  	creatorUserId Long required,
+  	modificationDate LocalDate,
+  	updatorUserId Long
+ }
+
+
+entity AGACUser {
+	status Long,
+	login String maxlength(20),
+	externalId String maxlength(25),
+	gender Gender,
+	firstName String maxlength(20),
+	lastName String maxlength(50),
+	language Language,
+	email String maxlength(100),
+	phone String maxlength(20),
+	cellularPhone String maxlength(20),
+	fax String maxlength(20),
+	authenticationType Long,
+	theme String maxlength(20),
+	creationDate LocalDate,
+	creatorUserId Long required,
+  	modificationDate LocalDate,
+  	updatorUserId Long 
+} 
+ 
+entity AuthorizationLink {
+	status Long,
+	validityStartDate LocalDate,
+	validityEndDate LocalDate,
+	creationDate LocalDate,
+	creatorUserId Long,
+  	modificationDate LocalDate,
+  	updatorUserId Long 
+}
+
+entity AuthorizationSetLink {
+	status Long,
+	validityStartDate LocalDate,
+	validityEndDate LocalDate,
+	creationDate LocalDate,
+	creatorUserId Long,
+  	modificationDate LocalDate,
+  	updatorUserId Long 
+}
+ 
+entity AGACUserLink {
+	status Long,
+	validityStartDate LocalDate,
+	validityEndDate LocalDate,
+	creationDate LocalDate,
+	creatorUserId Long,
+  	modificationDate LocalDate,
+  	updatorUserId Long 
+} 
+
+
+relationship OneToMany{
+  AuthorizationSetLink{agacAuthorization} to AGACAuthorization{authorizationSetLink}
+}
+
+relationship OneToMany{
+  AuthorizationSet{authorizationLink} to AuthorizationLink{authorizationSet}
+}
+
+relationship OneToMany{
+  AuthorizationSetLink{authorizationSet} to AuthorizationSet{authorizationSetLink}
+}
+
+relationship OneToMany{
+  AGACUser{authorizationSetLink} to AuthorizationSetLink{agacUser}
+}
+ 
+relationship OneToMany{
+  AGACUserLink{agacUser} to AGACUser{agacUserLink}
+}
+
+relationship OneToMany{
+  AGACOrganization{agacUserLink} to AGACUserLink{agacOrganization}
+}
+
+ 
+enum Level {
+    ROOT, SUB
+}
+  
+enum BoolValue {
+    Y, N
+}  
+  
+enum Gender {
+	MR, M, MS, MRS
+}  
+
+enum Language {
+	FR, EN, DE
+} 

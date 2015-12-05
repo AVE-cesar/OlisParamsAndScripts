@@ -1,0 +1,29 @@
+{
+    "olisParamsAndScriptsApp": {
+        "userLink" : {
+            "home": {
+                "title": "UserLinks",
+                "createLabel": "Create a new UserLink",
+                "createOrEditLabel": "Create or edit a UserLink"
+            },
+            "created": "A new UserLink is created with identifier {{ param }}",
+            "updated": "A UserLink is updated with identifier {{ param }}",
+            "deleted": "A UserLink is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete UserLink {{ id }}?"
+            },
+            "detail": {
+                "title": "UserLink"
+            },
+            "status": "Status",
+            "validityStartDate": "ValidityStartDate",
+            "validityEndDate": "ValidityEndDate",
+            "creationDate": "CreationDate",
+            "creatorUserId": "CreatorUserId",
+            "modificationDate": "ModificationDate",
+            "updatorUserId": "UpdatorUserId",
+            "organization": "Organization",
+            "agacUser": "AgacUser"
+        }
+    }
+}

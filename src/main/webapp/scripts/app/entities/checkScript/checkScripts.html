@@ -1,0 +1,61 @@
+<div>
+    <h2 translate="olisParamsAndScriptsApp.checkScript.home.title">CheckScripts</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="checkScript.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="olisParamsAndScriptsApp.checkScript.home.createLabel">Create a new CheckScript</span>
+                </button>
+            </div>
+            <div class="col-md-8">
+                <form name="searchForm" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="query">
+                    </div>
+                    <button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a CheckScript</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.field.id">ID</th>
+                    <th translate="olisParamsAndScriptsApp.checkScript.script">Script</th>
+                    <th translate="olisParamsAndScriptsApp.checkScript.prompt">prompt</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="checkScript in checkScripts track by checkScript.id">
+                    <td><a ui-sref="checkScript.detail({id:checkScript.id})">{{checkScript.id}}</a></td>
+                    <td>{{checkScript.script}}</td>
+                    <td>
+                        <a ui-sref="prompt.detail({id:checkScript.prompt.id})">{{checkScript.prompt.name}}</a>
+                    </td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="checkScript.detail({id:checkScript.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="checkScript.edit({id:checkScript.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="checkScript.delete({id:checkScript.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

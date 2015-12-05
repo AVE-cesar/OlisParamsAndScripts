@@ -1,0 +1,66 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 50
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "technicalName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 255
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "type",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 3
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "script",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "ttl",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 50
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "defaultValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "order",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20151115170913",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "les prompts"
+}

@@ -1,0 +1,34 @@
+{
+    "olisParamsAndScriptsApp": {
+        "prompt" : {
+            "home": {
+                "title": "Prompts",
+                "createLabel": "Create a new Prompt",
+                "createOrEditLabel": "Create or edit a Prompt"
+            },
+            "created": "A new Prompt is created with identifier {{ param }}",
+            "updated": "A Prompt is updated with identifier {{ param }}",
+            "deleted": "A Prompt is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Prompt {{ id }}?"
+            },
+            "detail": {
+                "title": "Prompt"
+            },
+            "name": "Name",
+            "systemName": "SystemName",
+            "type": "Type",
+            "transformationScript": "TransformationScript",
+            "visibleName": "VisibleName",
+            "defaultValueScript": "DefaultValueScript",
+            "order": "Order",
+            "promptPosition": "PromptPosition",
+            "datasourcePosition": "DatasourcePosition",
+            "graphicalComponentLink": "GraphicalComponentLink",
+            "graphicalComponentParam": "GraphicalComponentParam",
+            "checkScript": "CheckScript",
+            "parameterDependencyFather": "ParameterDependencyFather",
+            "parameterDependencyChild": "ParameterDependencyChild"
+        }
+    }
+}

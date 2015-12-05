@@ -1,0 +1,24 @@
+{
+    "olisParamsAndScriptsApp": {
+        "aGACAuthorization" : {
+            "home": {
+                "title": "AGACAuthorizations",
+                "createLabel": "Créer un nouveau AGACAuthorization",
+                "createOrEditLabel": "Créer ou éditer un AGACAuthorization"
+            },
+            "created": "Un nouveau AGACAuthorization a été créé avec l'identifiant {{ param }}",
+            "updated": "Le AGACAuthorization avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le AGACAuthorization avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le AGACAuthorization {{ id }} ?"
+            },
+            "detail": {
+                "title": "AGACAuthorization"
+            },
+            "code": "Code",
+            "name": "Name",
+            "authorizationSetLink": "AuthorizationSetLink"
+        }
+    }
+}
+

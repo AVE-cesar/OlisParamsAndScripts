@@ -1,0 +1,90 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "datasourcePosition",
+      "relationshipFieldName": "datasourcePosition",
+      "otherEntityName": "datasourcePosition",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "datasource"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "condition",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "type",
+      "fieldType": "DatasourceType",
+      "fieldValues": "BIF,WEB,LOV,SCR,SQL,SIM"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "value",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 50
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "datasourceLink",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 3
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "sql",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "script",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 50
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "url",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 1000
+    },
+    {
+      "fieldId": 10,
+      "fieldName": "request",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 11,
+      "fieldName": "response",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20151122200754",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "PAR_DTA_LST"
+}

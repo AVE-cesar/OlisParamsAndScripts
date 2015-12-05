@@ -1,0 +1,43 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "authorizationLink",
+      "relationshipFieldName": "authorizationLink",
+      "otherEntityName": "authorizationLink",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "authorizationSet"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "authorizationSetLink",
+      "relationshipFieldName": "authorizationSetLink",
+      "otherEntityName": "authorizationSetLink",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 100
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 100
+    }
+  ],
+  "changelogDate": "20151205153735",
+  "dto": "no",
+  "pagination": "no"
+}

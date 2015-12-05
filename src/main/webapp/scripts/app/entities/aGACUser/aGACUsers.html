@@ -1,0 +1,93 @@
+<div>
+    <h2 translate="olisParamsAndScriptsApp.aGACUser.home.title">AGACUsers</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="aGACUser.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="olisParamsAndScriptsApp.aGACUser.home.createLabel">Create a new AGACUser</span>
+                </button>
+            </div>
+            <div class="col-md-8">
+                <form name="searchForm" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="query">
+                    </div>
+                    <button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a AGACUser</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.field.id">ID</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.status">Status</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.login">Login</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.externalId">ExternalId</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.gender">Gender</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.firstName">FirstName</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.lastName">LastName</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.language">Language</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.email">Email</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.phone">Phone</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.cellularPhone">CellularPhone</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.fax">Fax</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.authenticationType">AuthenticationType</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.theme">Theme</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.creationDate">CreationDate</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.creatorUserId">CreatorUserId</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.modificationDate">ModificationDate</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.updatorUserId">UpdatorUserId</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUser.agacUserLink">agacUserLink</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="aGACUser in aGACUsers track by aGACUser.id">
+                    <td><a ui-sref="aGACUser.detail({id:aGACUser.id})">{{aGACUser.id}}</a></td>
+                    <td>{{aGACUser.status}}</td>
+                    <td>{{aGACUser.login}}</td>
+                    <td>{{aGACUser.externalId}}</td>
+                    <td translate="{{'olisParamsAndScriptsApp.Gender.' + aGACUser.gender}}">{{aGACUser.gender}}</td>
+                    <td>{{aGACUser.firstName}}</td>
+                    <td>{{aGACUser.lastName}}</td>
+                    <td translate="{{'olisParamsAndScriptsApp.Language.' + aGACUser.language}}">{{aGACUser.language}}</td>
+                    <td>{{aGACUser.email}}</td>
+                    <td>{{aGACUser.phone}}</td>
+                    <td>{{aGACUser.cellularPhone}}</td>
+                    <td>{{aGACUser.fax}}</td>
+                    <td>{{aGACUser.authenticationType}}</td>
+                    <td>{{aGACUser.theme}}</td>
+                        <td>{{aGACUser.creationDate | date:'mediumDate'}}</td>
+                    <td>{{aGACUser.creatorUserId}}</td>
+                        <td>{{aGACUser.modificationDate | date:'mediumDate'}}</td>
+                    <td>{{aGACUser.updatorUserId}}</td>
+                    <td>
+                        <a ui-sref="aGACUserLink.detail({id:aGACUser.agacUserLink.id})">{{aGACUser.agacUserLink.id}}</a>
+                    </td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="aGACUser.detail({id:aGACUser.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="aGACUser.edit({id:aGACUser.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="aGACUser.delete({id:aGACUser.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

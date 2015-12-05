@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "OlisParamsAndScripts",
+    "packageName": "com.caceis.olis.paramsandscripts",
+    "packageFolder": "com/caceis/olis/paramsandscripts",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "oracle",
+    "prodDatabaseType": "oracle",
+    "searchEngine": "elasticsearch",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": true,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "682c03e5b2c1b8252b3518c6275e5c2f94015a69",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}

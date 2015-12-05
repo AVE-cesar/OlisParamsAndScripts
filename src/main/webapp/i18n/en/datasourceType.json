@@ -1,0 +1,13 @@
+{
+    "olisParamsAndScriptsApp": {
+        "DatasourceType" : {
+            "null": "",
+            "BIF": "BIF",
+            "WEB": "WEB",
+            "LOV": "LOV",
+            "SCR": "SCR",
+            "SQL": "SQL",
+            "SIM": "SIM"
+        }
+    }
+}

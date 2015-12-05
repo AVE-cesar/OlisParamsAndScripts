@@ -1,0 +1,16 @@
+/** les prompts */
+entity ParamCategory {
+	description String maxlength(255)
+}
+
+entity GlobalParameter {
+	key String required maxlength(50),
+	value String required maxlength(4000),
+	description String maxlength(200)
+}
+
+relationship OneToMany{
+	ParamCategory{Parameters} to GlobalParameter{Category}
+	}
+
+

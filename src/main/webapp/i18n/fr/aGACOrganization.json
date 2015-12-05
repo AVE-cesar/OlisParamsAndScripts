@@ -1,0 +1,36 @@
+{
+    "olisParamsAndScriptsApp": {
+        "aGACOrganization" : {
+            "home": {
+                "title": "AGACOrganizations",
+                "createLabel": "Créer un nouveau AGACOrganization",
+                "createOrEditLabel": "Créer ou éditer un AGACOrganization"
+            },
+            "created": "Un nouveau AGACOrganization a été créé avec l'identifiant {{ param }}",
+            "updated": "Le AGACOrganization avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le AGACOrganization avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le AGACOrganization {{ id }} ?"
+            },
+            "detail": {
+                "title": "AGACOrganization"
+            },
+            "code": "Code",
+            "name": "Name",
+            "type": "Type",
+            "status": "Status",
+            "rootOrganization": "RootOrganization",
+            "fatherOrganization": "FatherOrganization",
+            "theme": "Theme",
+            "email": "Email",
+            "level": "Level",
+            "internal": "Internal",
+            "creationDate": "CreationDate",
+            "creatorUserId": "CreatorUserId",
+            "modificationDate": "ModificationDate",
+            "updatorUserId": "UpdatorUserId",
+            "agacUserLink": "AgacUserLink"
+        }
+    }
+}
+

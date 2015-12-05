@@ -1,0 +1,312 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>OlisParamsAndScripts</title>
+        <meta name="description" content="">
+        <meta name="google" value="notranslate">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css assets/styles/vendor.css -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css assets/styles/main.css -->
+        <link rel="stylesheet" href="assets/styles/main.css">
+        <link rel="stylesheet" href="assets/styles/myStyle.css">
+        <!-- endbuild -->
+    </head>
+    <body ng-app="olisParamsAndScriptsApp">
+        <!--[if lt IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div ng-show="{{ENV === 'dev'}}" class="development" ng-cloak=""></div>
+        <div ui-view="navbar" ng-cloak=""></div>
+        <div class="container">
+            <div class="well" ui-view="content"></div>
+
+            <div class="footer">
+                <p translate="footer">This is your footer</p>
+            </div>
+        </div>
+
+        <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>-->
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-aria/angular-aria.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="bower_components/angular-cache-buster/angular-cache-buster.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+        <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+        <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/angular-translate/angular-translate.js"></script>
+        <script src="bower_components/messageformat/messageformat.js"></script>
+        <script src="bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
+        <script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+        <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/json3/lib/json3.js"></script>
+        <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+        <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+        
+        <!-- combo editable -->
+        <script src="bower_components/ui-select/dist/select.js"></script>
+        <link rel="stylesheet" href="bower_components/ui-select/dist/select.css">
+        <!-- endbower -->
+        <!-- endbuild -->
+
+
+    <!-- build:js({.tmp,src/main/webapp}) scripts/app.js -->
+    <script src="scripts/app/app.js"></script>
+    <script src="scripts/app/app.constants.js"></script>
+    <script src="scripts/components/auth/auth.service.js"></script>
+    <script src="scripts/components/auth/principal.service.js"></script>
+    <script src="scripts/components/auth/authority.directive.js"></script>
+    <script src="scripts/components/auth/services/account.service.js"></script>
+    <script src="scripts/components/auth/services/activate.service.js"></script>
+    <script src="scripts/components/auth/services/password.service.js"></script>
+    <script src="scripts/components/auth/services/register.service.js"></script>
+    <script src="scripts/components/form/form.directive.js"></script>
+    <script src="scripts/components/form/maxbytes.directive.js"></script>
+    <script src="scripts/components/form/minbytes.directive.js"></script>
+    <script src="scripts/components/form/pager.directive.js"></script>
+    <script src="scripts/components/form/pagination.directive.js"></script>
+    <script src="scripts/components/admin/audits.service.js"></script>
+    <script src="scripts/components/admin/logs.service.js"></script>
+    <script src="scripts/components/admin/configuration.service.js"></script>
+    <script src="scripts/components/admin/monitoring.service.js"></script>
+    <script src="scripts/components/interceptor/auth.interceptor.js"></script>
+    <script src="scripts/components/interceptor/errorhandler.interceptor.js"></script>
+    <script src="scripts/components/interceptor/notification.interceptor.js"></script>
+    <script src="scripts/components/navbar/navbar.directive.js"></script>
+    <script src="scripts/components/navbar/navbar.controller.js"></script>
+    <script src="scripts/components/user/user.service.js"></script>
+    <script src="scripts/components/util/truncate.filter.js"></script>
+    <script src="scripts/components/util/base64.service.js"></script>
+    <script src="scripts/components/util/capitalize.filter.js"></script>
+    <script src="scripts/components/alert/alert.service.js"></script>
+    <script src="scripts/components/alert/alert.directive.js"></script>
+    <script src="scripts/components/util/parse-links.service.js"></script>
+    <script src="scripts/components/util/dateutil.service.js"></script>
+    <script src="scripts/app/account/account.js"></script>
+    <script src="scripts/app/account/activate/activate.js"></script>
+    <script src="scripts/app/account/activate/activate.controller.js"></script>
+    <script src="scripts/app/account/login/login.js"></script>
+    <script src="scripts/app/account/login/login.controller.js"></script>
+    <script src="scripts/app/account/password/password.js"></script>
+    <script src="scripts/app/account/password/password.controller.js"></script>
+    <script src="scripts/app/account/password/password.directive.js"></script>
+    <script src="scripts/app/account/register/register.js"></script>
+    <script src="scripts/app/account/register/register.controller.js"></script>
+    <script src="scripts/app/account/settings/settings.js"></script>
+    <script src="scripts/app/account/settings/settings.controller.js"></script>
+    <script src="scripts/app/account/reset/finish/reset.finish.controller.js"></script>
+    <script src="scripts/app/account/reset/finish/reset.finish.js"></script>
+    <script src="scripts/app/account/reset/request/reset.request.controller.js"></script>
+    <script src="scripts/app/account/reset/request/reset.request.js"></script>
+    <script src="scripts/app/admin/admin.js"></script>
+    <script src="scripts/app/admin/audits/audits.js"></script>
+    <script src="scripts/app/admin/audits/audits.controller.js"></script>
+    <script src="scripts/app/admin/configuration/configuration.js"></script>
+    <script src="scripts/app/admin/configuration/configuration.controller.js"></script>
+    <script src="scripts/app/admin/docs/docs.js"></script>
+    <script src="scripts/app/admin/health/health.js"></script>
+    <script src="scripts/app/admin/health/health.controller.js"></script>
+    <script src="scripts/app/admin/health/health.modal.controller.js"></script>
+    <script src="scripts/app/admin/logs/logs.js"></script>
+    <script src="scripts/app/admin/logs/logs.controller.js"></script>
+    <script src="scripts/app/admin/metrics/metrics.js"></script>
+    <script src="scripts/app/admin/metrics/metrics.controller.js"></script>
+    <script src="scripts/app/admin/metrics/metrics.modal.controller.js"></script>
+    <script src="scripts/app/admin/user-management/user-management-detail.controller.js"></script>
+    <script src="scripts/app/admin/user-management/user-management-dialog.controller.js"></script>
+    <script src="scripts/app/admin/user-management/user-management.controller.js"></script>
+    <script src="scripts/app/admin/user-management/user-management.js"></script>
+    <script src="scripts/app/entities/entity.js"></script>
+    <script src="scripts/app/error/error.js"></script>
+    <script src="scripts/app/main/main.js"></script>
+    <script src="scripts/app/main/main.controller.js"></script>
+    <script src="bower_components/messageformat/locale/en.js"></script>
+    <script src="bower_components/messageformat/locale/fr.js"></script>
+    <script src="scripts/components/language/language.service.js"></script>
+    <script src="scripts/components/language/language.controller.js"></script>
+    <script src="scripts/components/auth/services/sessions.service.js"></script>
+    <script src="scripts/components/auth/provider/auth.session.service.js"></script>
+    <script src="scripts/app/account/sessions/sessions.js"></script>
+    <script src="scripts/app/account/sessions/sessions.controller.js"></script>
+    <script src="scripts/app/entities/globalParameters/globalParameters.js"></script>
+    <script src="scripts/app/entities/globalParameters/globalParameters.controller.js"></script>
+    <script src="scripts/app/entities/globalParameters/globalParameters-dialog.controller.js"></script>
+    <script src="scripts/app/entities/globalParameters/globalParameters-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/globalParameters/globalParameters-detail.controller.js"></script>
+    <script src="scripts/components/entities/globalParameters/globalParameters.service.js"></script>
+    <script src="scripts/components/entities/globalParameters/globalParameters.search.service.js"></script>
+    <script src="scripts/app/entities/paramCategory/paramCategory.js"></script>
+    <script src="scripts/app/entities/paramCategory/paramCategory.controller.js"></script>
+    <script src="scripts/app/entities/paramCategory/paramCategory-dialog.controller.js"></script>
+    <script src="scripts/app/entities/paramCategory/paramCategory-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/paramCategory/paramCategory-detail.controller.js"></script>
+    <script src="scripts/components/entities/paramCategory/paramCategory.service.js"></script>
+    <script src="scripts/components/entities/paramCategory/paramCategory.search.service.js"></script>
+    <script src="scripts/app/entities/globalParameter/globalParameter.js"></script>
+    <script src="scripts/app/entities/globalParameter/globalParameter.controller.js"></script>
+    <script src="scripts/app/entities/globalParameter/globalParameter-dialog.controller.js"></script>
+    <script src="scripts/app/entities/globalParameter/globalParameter-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/globalParameter/globalParameter-detail.controller.js"></script>
+    <script src="scripts/components/entities/globalParameter/globalParameter.service.js"></script>
+    <script src="scripts/components/entities/globalParameter/globalParameter.search.service.js"></script>
+    <script src="scripts/app/entities/prompt/prompt.js"></script>
+    <script src="scripts/app/entities/prompt/prompt.controller.js"></script>
+    <script src="scripts/app/entities/prompt/prompt-dialog.controller.js"></script>
+    <script src="scripts/app/entities/prompt/prompt-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/prompt/prompt-detail.controller.js"></script>
+    <script src="scripts/components/entities/prompt/prompt.service.js"></script>
+    <script src="scripts/components/entities/prompt/prompt.search.service.js"></script>
+    <script src="scripts/app/entities/graphicalComponent/graphicalComponent.js"></script>
+    <script src="scripts/app/entities/graphicalComponent/graphicalComponent.controller.js"></script>
+    <script src="scripts/app/entities/graphicalComponent/graphicalComponent-dialog.controller.js"></script>
+    <script src="scripts/app/entities/graphicalComponent/graphicalComponent-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/graphicalComponent/graphicalComponent-detail.controller.js"></script>
+    <script src="scripts/components/entities/graphicalComponent/graphicalComponent.service.js"></script>
+    <script src="scripts/components/entities/graphicalComponent/graphicalComponent.search.service.js"></script>
+    <script src="scripts/app/entities/graphicalComponentLink/graphicalComponentLink.js"></script>
+    <script src="scripts/app/entities/graphicalComponentLink/graphicalComponentLink.controller.js"></script>
+    <script src="scripts/app/entities/graphicalComponentLink/graphicalComponentLink-dialog.controller.js"></script>
+    <script src="scripts/app/entities/graphicalComponentLink/graphicalComponentLink-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/graphicalComponentLink/graphicalComponentLink-detail.controller.js"></script>
+    <script src="scripts/components/entities/graphicalComponentLink/graphicalComponentLink.service.js"></script>
+    <script src="scripts/components/entities/graphicalComponentLink/graphicalComponentLink.search.service.js"></script>
+    <script src="scripts/app/entities/datasource/datasource.js"></script>
+    <script src="scripts/app/entities/datasource/datasource.controller.js"></script>
+    <script src="scripts/app/entities/datasource/datasource-dialog.controller.js"></script>
+    <script src="scripts/app/entities/datasource/datasource-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/datasource/datasource-detail.controller.js"></script>
+    <script src="scripts/components/entities/datasource/datasource.service.js"></script>
+    <script src="scripts/components/entities/datasource/datasource.search.service.js"></script>
+    <script src="scripts/app/entities/datasourcePosition/datasourcePosition.js"></script>
+    <script src="scripts/app/entities/datasourcePosition/datasourcePosition.controller.js"></script>
+    <script src="scripts/app/entities/datasourcePosition/datasourcePosition-dialog.controller.js"></script>
+    <script src="scripts/app/entities/datasourcePosition/datasourcePosition-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/datasourcePosition/datasourcePosition-detail.controller.js"></script>
+    <script src="scripts/components/entities/datasourcePosition/datasourcePosition.service.js"></script>
+    <script src="scripts/components/entities/datasourcePosition/datasourcePosition.search.service.js"></script>
+    <script src="scripts/app/entities/parameterDependency/parameterDependency.js"></script>
+    <script src="scripts/app/entities/parameterDependency/parameterDependency.controller.js"></script>
+    <script src="scripts/app/entities/parameterDependency/parameterDependency-dialog.controller.js"></script>
+    <script src="scripts/app/entities/parameterDependency/parameterDependency-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/parameterDependency/parameterDependency-detail.controller.js"></script>
+    <script src="scripts/components/entities/parameterDependency/parameterDependency.service.js"></script>
+    <script src="scripts/components/entities/parameterDependency/parameterDependency.search.service.js"></script>
+    <script src="scripts/app/entities/checkScript/checkScript.js"></script>
+    <script src="scripts/app/entities/checkScript/checkScript.controller.js"></script>
+    <script src="scripts/app/entities/checkScript/checkScript-dialog.controller.js"></script>
+    <script src="scripts/app/entities/checkScript/checkScript-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/checkScript/checkScript-detail.controller.js"></script>
+    <script src="scripts/components/entities/checkScript/checkScript.service.js"></script>
+    <script src="scripts/components/entities/checkScript/checkScript.search.service.js"></script>
+    <script src="scripts/app/entities/promptPosition/promptPosition.js"></script>
+    <script src="scripts/app/entities/promptPosition/promptPosition.controller.js"></script>
+    <script src="scripts/app/entities/promptPosition/promptPosition-dialog.controller.js"></script>
+    <script src="scripts/app/entities/promptPosition/promptPosition-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/promptPosition/promptPosition-detail.controller.js"></script>
+    <script src="scripts/components/entities/promptPosition/promptPosition.service.js"></script>
+    <script src="scripts/components/entities/promptPosition/promptPosition.search.service.js"></script>
+    <script src="scripts/app/entities/graphicalComponentParam/graphicalComponentParam.js"></script>
+    <script src="scripts/app/entities/graphicalComponentParam/graphicalComponentParam.controller.js"></script>
+    <script src="scripts/app/entities/graphicalComponentParam/graphicalComponentParam-dialog.controller.js"></script>
+    <script src="scripts/app/entities/graphicalComponentParam/graphicalComponentParam-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/graphicalComponentParam/graphicalComponentParam-detail.controller.js"></script>
+    <script src="scripts/components/entities/graphicalComponentParam/graphicalComponentParam.service.js"></script>
+    <script src="scripts/components/entities/graphicalComponentParam/graphicalComponentParam.search.service.js"></script>
+    <script src="scripts/app/entities/report/report.js"></script>
+    <script src="scripts/app/entities/report/report.controller.js"></script>
+    <script src="scripts/app/entities/report/report-dialog.controller.js"></script>
+    <script src="scripts/app/entities/report/report-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/report/report-detail.controller.js"></script>
+    <script src="scripts/components/entities/report/report.service.js"></script>
+    <script src="scripts/components/entities/report/report.search.service.js"></script>
+    <script src="scripts/app/entities/userLink/userLink.js"></script>
+    <script src="scripts/app/entities/userLink/userLink.controller.js"></script>
+    <script src="scripts/app/entities/userLink/userLink-dialog.controller.js"></script>
+    <script src="scripts/app/entities/userLink/userLink-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/userLink/userLink-detail.controller.js"></script>
+    <script src="scripts/components/entities/userLink/userLink.service.js"></script>
+    <script src="scripts/components/entities/userLink/userLink.search.service.js"></script>
+    <script src="scripts/app/entities/profileLink/profileLink.js"></script>
+    <script src="scripts/app/entities/profileLink/profileLink.controller.js"></script>
+    <script src="scripts/app/entities/profileLink/profileLink-dialog.controller.js"></script>
+    <script src="scripts/app/entities/profileLink/profileLink-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/profileLink/profileLink-detail.controller.js"></script>
+    <script src="scripts/components/entities/profileLink/profileLink.service.js"></script>
+    <script src="scripts/components/entities/profileLink/profileLink.search.service.js"></script>
+    <script src="scripts/app/entities/authorizationLink/authorizationLink.js"></script>
+    <script src="scripts/app/entities/authorizationLink/authorizationLink.controller.js"></script>
+    <script src="scripts/app/entities/authorizationLink/authorizationLink-dialog.controller.js"></script>
+    <script src="scripts/app/entities/authorizationLink/authorizationLink-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/authorizationLink/authorizationLink-detail.controller.js"></script>
+    <script src="scripts/components/entities/authorizationLink/authorizationLink.service.js"></script>
+    <script src="scripts/components/entities/authorizationLink/authorizationLink.search.service.js"></script>
+    <script src="scripts/app/entities/aGACUser/aGACUser.js"></script>
+    <script src="scripts/app/entities/aGACUser/aGACUser.controller.js"></script>
+    <script src="scripts/app/entities/aGACUser/aGACUser-dialog.controller.js"></script>
+    <script src="scripts/app/entities/aGACUser/aGACUser-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/aGACUser/aGACUser-detail.controller.js"></script>
+    <script src="scripts/components/entities/aGACUser/aGACUser.service.js"></script>
+    <script src="scripts/components/entities/aGACUser/aGACUser.search.service.js"></script>
+    <script src="scripts/app/entities/aGACOrganization/aGACOrganization.js"></script>
+    <script src="scripts/app/entities/aGACOrganization/aGACOrganization.controller.js"></script>
+    <script src="scripts/app/entities/aGACOrganization/aGACOrganization-dialog.controller.js"></script>
+    <script src="scripts/app/entities/aGACOrganization/aGACOrganization-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/aGACOrganization/aGACOrganization-detail.controller.js"></script>
+    <script src="scripts/components/entities/aGACOrganization/aGACOrganization.service.js"></script>
+    <script src="scripts/components/entities/aGACOrganization/aGACOrganization.search.service.js"></script>
+    <script src="scripts/app/entities/aGACUserLink/aGACUserLink.js"></script>
+    <script src="scripts/app/entities/aGACUserLink/aGACUserLink.controller.js"></script>
+    <script src="scripts/app/entities/aGACUserLink/aGACUserLink-dialog.controller.js"></script>
+    <script src="scripts/app/entities/aGACUserLink/aGACUserLink-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/aGACUserLink/aGACUserLink-detail.controller.js"></script>
+    <script src="scripts/components/entities/aGACUserLink/aGACUserLink.service.js"></script>
+    <script src="scripts/components/entities/aGACUserLink/aGACUserLink.search.service.js"></script>
+    <script src="scripts/app/entities/authorizationSetLink/authorizationSetLink.js"></script>
+    <script src="scripts/app/entities/authorizationSetLink/authorizationSetLink.controller.js"></script>
+    <script src="scripts/app/entities/authorizationSetLink/authorizationSetLink-dialog.controller.js"></script>
+    <script src="scripts/app/entities/authorizationSetLink/authorizationSetLink-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/authorizationSetLink/authorizationSetLink-detail.controller.js"></script>
+    <script src="scripts/components/entities/authorizationSetLink/authorizationSetLink.service.js"></script>
+    <script src="scripts/components/entities/authorizationSetLink/authorizationSetLink.search.service.js"></script>
+    <script src="scripts/app/entities/aGACAuthorization/aGACAuthorization.js"></script>
+    <script src="scripts/app/entities/aGACAuthorization/aGACAuthorization.controller.js"></script>
+    <script src="scripts/app/entities/aGACAuthorization/aGACAuthorization-dialog.controller.js"></script>
+    <script src="scripts/app/entities/aGACAuthorization/aGACAuthorization-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/aGACAuthorization/aGACAuthorization-detail.controller.js"></script>
+    <script src="scripts/components/entities/aGACAuthorization/aGACAuthorization.service.js"></script>
+    <script src="scripts/components/entities/aGACAuthorization/aGACAuthorization.search.service.js"></script>
+    <script src="scripts/app/entities/authorizationSet/authorizationSet.js"></script>
+    <script src="scripts/app/entities/authorizationSet/authorizationSet.controller.js"></script>
+    <script src="scripts/app/entities/authorizationSet/authorizationSet-dialog.controller.js"></script>
+    <script src="scripts/app/entities/authorizationSet/authorizationSet-delete-dialog.controller.js"></script>
+    <script src="scripts/app/entities/authorizationSet/authorizationSet-detail.controller.js"></script>
+    <script src="scripts/components/entities/authorizationSet/authorizationSet.service.js"></script>
+    <script src="scripts/components/entities/authorizationSet/authorizationSet.search.service.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

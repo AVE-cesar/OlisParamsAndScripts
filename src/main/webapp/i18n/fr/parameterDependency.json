@@ -1,0 +1,26 @@
+{
+    "olisParamsAndScriptsApp": {
+        "parameterDependency" : {
+            "home": {
+                "title": "ParameterDependencys",
+                "createLabel": "Créer un nouveau ParameterDependency",
+                "createOrEditLabel": "Créer ou éditer un ParameterDependency"
+            },
+            "created": "Un nouveau ParameterDependency a été créé avec l'identifiant {{ param }}",
+            "updated": "Le ParameterDependency avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le ParameterDependency avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le ParameterDependency {{ id }} ?"
+            },
+            "detail": {
+                "title": "ParameterDependency"
+            },
+            "type": "Type",
+            "checkOperation": "CheckOperation",
+            "script": "Script",
+            "promptFather": "PromptFather",
+            "promptChild": "PromptChild"
+        }
+    }
+}
+

@@ -1,0 +1,65 @@
+<div>
+    <h2 translate="olisParamsAndScriptsApp.promptPosition.home.title">PromptPositions</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="promptPosition.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="olisParamsAndScriptsApp.promptPosition.home.createLabel">Create a new PromptPosition</span>
+                </button>
+            </div>
+            <div class="col-md-8">
+                <form name="searchForm" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="query">
+                    </div>
+                    <button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a PromptPosition</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.field.id">ID</th>
+                    <th translate="olisParamsAndScriptsApp.promptPosition.order">Order</th>
+                    <th translate="olisParamsAndScriptsApp.promptPosition.report">report</th>
+                    <th translate="olisParamsAndScriptsApp.promptPosition.prompt">prompt</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="promptPosition in promptPositions track by promptPosition.id">
+                    <td><a ui-sref="promptPosition.detail({id:promptPosition.id})">{{promptPosition.id}}</a></td>
+                    <td>{{promptPosition.order}}</td>
+                    <td>
+                        <a ui-sref="report.detail({id:promptPosition.report.id})">{{promptPosition.report.name}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="prompt.detail({id:promptPosition.prompt.id})">{{promptPosition.prompt.name}}</a>
+                    </td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="promptPosition.detail({id:promptPosition.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="promptPosition.edit({id:promptPosition.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="promptPosition.delete({id:promptPosition.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

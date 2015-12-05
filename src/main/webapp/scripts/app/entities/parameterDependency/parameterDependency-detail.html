@@ -1,0 +1,80 @@
+
+<div>
+    <h2><span translate="olisParamsAndScriptsApp.parameterDependency.detail.title">ParameterDependency</span> {{parameterDependency.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.parameterDependency.type">Type</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'olisParamsAndScriptsApp.DependencyType.' + parameterDependency.type}}">{{parameterDependency.type}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.parameterDependency.checkOperation">CheckOperation</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{parameterDependency.checkOperation}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.parameterDependency.script">Script</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{parameterDependency.script}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.parameterDependency.promptFather">promptFather</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="prompt.detail({id:parameterDependency.promptFather.id})">{{parameterDependency.promptFather.name}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.parameterDependency.promptChild">promptChild</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="prompt.detail({id:parameterDependency.promptChild.id})">{{parameterDependency.promptChild.name}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+     <button type="submit"
+            ui-sref="parameterDependency.edit({id:parameterDependency.id})"
+            class="btn btn-primary btn-sm">
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+    </button>
+    
+    <button type="submit"
+            ui-sref="parameterDependency.duplicate({id:parameterDependency.id})"
+            class="btn btn-warning btn-sm">
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.duplicate"> Duplicate</span>
+    </button>
+    
+    
+     <button type="submit"
+              ui-sref="parameterDependency.delete({id:parameterDependency.id})"
+              class="btn btn-danger btn-sm">
+          <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+      </button>
+</div>

@@ -1,0 +1,28 @@
+{
+    "olisParamsAndScriptsApp": {
+        "globalParameters" : {
+            "home": {
+                "title": "GlobalParameterss",
+                "createLabel": "Créer un nouveau GlobalParameters",
+                "createOrEditLabel": "Créer ou éditer un GlobalParameters"
+            },
+            "created": "Un nouveau GlobalParameters a été créé avec l'identifiant {{ param }}",
+            "updated": "Le GlobalParameters avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le GlobalParameters avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le GlobalParameters {{ id }} ?"
+            },
+            "detail": {
+                "title": "GlobalParameters"
+            },
+            "name": "Name",
+            "technicalName": "TechnicalName",
+            "type": "Type",
+            "script": "Script",
+            "ttl": "Ttl",
+            "defaultValue": "DefaultValue",
+            "order": "Order"
+        }
+    }
+}
+

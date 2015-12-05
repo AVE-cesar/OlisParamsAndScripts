@@ -1,0 +1,86 @@
+
+<div>
+    <h2><span translate="olisParamsAndScriptsApp.userLink.detail.title">UserLink</span> {{userLink.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.userLink.status">Status</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{userLink.status}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.userLink.validityStartDate">ValidityStartDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{userLink.validityStartDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.userLink.validityEndDate">ValidityEndDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{userLink.validityEndDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.userLink.creationDate">CreationDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{userLink.creationDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.userLink.creatorUserId">CreatorUserId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{userLink.creatorUserId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.userLink.modificationDate">ModificationDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{userLink.modificationDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.userLink.updatorUserId">UpdatorUserId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{userLink.updatorUserId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.userLink.organization">organization</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="organization.detail({id:userLink.organization.id})">{{userLink.organization.id}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

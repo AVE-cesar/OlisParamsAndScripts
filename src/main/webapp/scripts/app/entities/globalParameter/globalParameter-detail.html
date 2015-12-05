@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="olisParamsAndScriptsApp.globalParameter.detail.title">GlobalParameter</span> {{globalParameter.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.globalParameter.key">Key</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{globalParameter.key}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.globalParameter.value">Value</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{globalParameter.value}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.globalParameter.description">Description</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{globalParameter.description}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.globalParameter.category">category</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="paramCategory.detail({id:globalParameter.category.id})">{{globalParameter.category.id}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

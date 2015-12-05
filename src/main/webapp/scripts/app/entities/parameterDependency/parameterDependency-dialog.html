@@ -1,0 +1,86 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myParameterDependencyLabel" translate="olisParamsAndScriptsApp.parameterDependency.home.createOrEditLabel">Create or edit a ParameterDependency</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="parameterDependency.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.parameterDependency.type" for="field_type">Type</label>
+            <select class="form-control" name="type" ng-model="parameterDependency.type" id="field_type" required>
+                <option value="FIL" translate="olisParamsAndScriptsApp.DependencyType.FIL">FIL</option>
+                <option value="VIS" translate="olisParamsAndScriptsApp.DependencyType.VIS">VIS</option>
+                <option value="SCR" translate="olisParamsAndScriptsApp.DependencyType.SCR">SCR</option>
+            </select>
+            <div ng-show="editForm.type.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.type.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.parameterDependency.checkOperation" for="field_checkOperation">CheckOperation</label>
+            <input type="text" class="form-control" name="checkOperation" id="field_checkOperation"
+                    ng-model="parameterDependency.checkOperation"
+                    ng-maxlength="3" />
+            <div ng-show="editForm.checkOperation.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.checkOperation.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="3">
+                    This field cannot be longer than 3 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.parameterDependency.script" for="field_script">Script</label>
+            <textarea class="form-control" name="script" id="field_script" ng-model="parameterDependency.script"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.parameterDependency.promptFather" for="field_promptFather">promptFather</label>
+            <!--select class="form-control" id="field_promptFather" name="promptFather" ng-model="parameterDependency.promptFather" ng-options="prompt as prompt.id for prompt in prompts track by prompt.id">
+                <option value=""></option>
+            </select-->
+            <ui-select ng-model="parameterDependency.promptFather" theme="bootstrap" ng-disabled="disabled" style="min-width: 300px;">
+		    <ui-select-match placeholder="Select a prompt in the list or search by his name or id">{{$select.selected.name}}</ui-select-match>
+		    <ui-select-choices repeat="prompt in prompts | propsFilter: {name: $select.search, id: $select.search} | orderBy: 'name'">
+		      <div ng-bind-html="prompt.name | highlight: $select.search"></div>
+		      <small>
+		        id: <span ng-bind-html="''+prompt.id | highlight: $select.search"></span>
+		      </small>
+		    </ui-select-choices>
+		  </ui-select>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.parameterDependency.promptChild" for="field_promptChild">promptChild</label>
+            <!--select class="form-control" id="field_promptChild" name="promptChild" ng-model="parameterDependency.promptChild" ng-options="prompt as prompt.id for prompt in prompts track by prompt.id">
+                <option value=""></option>
+            </select-->
+            <ui-select ng-model="parameterDependency.promptChild" theme="bootstrap" ng-disabled="disabled" style="min-width: 300px;">
+		    <ui-select-match placeholder="Select a prompt in the list or search by his name or id">{{$select.selected.name}}</ui-select-match>
+		    <ui-select-choices repeat="prompt in prompts | propsFilter: {name: $select.search, id: $select.search} | orderBy: 'name'">
+		      <div ng-bind-html="prompt.name | highlight: $select.search"></div>
+		      <small>
+		        id: <span ng-bind-html="''+prompt.id | highlight: $select.search"></span>
+		      </small>
+		    </ui-select-choices>
+		  </ui-select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

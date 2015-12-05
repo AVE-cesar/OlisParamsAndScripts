@@ -1,0 +1,10 @@
+{
+    "olisParamsAndScriptsApp": {
+        "Mode" : {
+            "null": "",
+            "ONL": "ONL",
+            "OFF": "OFF",
+            "ALL": "ALL"
+        }
+    }
+}

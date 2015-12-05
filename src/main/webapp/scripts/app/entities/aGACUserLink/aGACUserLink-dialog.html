@@ -1,0 +1,74 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myAGACUserLinkLabel" translate="olisParamsAndScriptsApp.aGACUserLink.home.createOrEditLabel">Create or edit a AGACUserLink</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="aGACUserLink.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUserLink.status" for="field_status">Status</label>
+            <input type="number" class="form-control" name="status" id="field_status"
+                    ng-model="aGACUserLink.status"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUserLink.validityStartDate" for="field_validityStartDate">ValidityStartDate</label>
+            <input type="date" class="form-control" name="validityStartDate" id="field_validityStartDate"
+                    ng-model="aGACUserLink.validityStartDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUserLink.validityEndDate" for="field_validityEndDate">ValidityEndDate</label>
+            <input type="date" class="form-control" name="validityEndDate" id="field_validityEndDate"
+                    ng-model="aGACUserLink.validityEndDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUserLink.creationDate" for="field_creationDate">CreationDate</label>
+            <input type="date" class="form-control" name="creationDate" id="field_creationDate"
+                    ng-model="aGACUserLink.creationDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUserLink.creatorUserId" for="field_creatorUserId">CreatorUserId</label>
+            <input type="number" class="form-control" name="creatorUserId" id="field_creatorUserId"
+                    ng-model="aGACUserLink.creatorUserId"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUserLink.modificationDate" for="field_modificationDate">ModificationDate</label>
+            <input type="date" class="form-control" name="modificationDate" id="field_modificationDate"
+                    ng-model="aGACUserLink.modificationDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUserLink.updatorUserId" for="field_updatorUserId">UpdatorUserId</label>
+            <input type="number" class="form-control" name="updatorUserId" id="field_updatorUserId"
+                    ng-model="aGACUserLink.updatorUserId"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUserLink.agacOrganization" for="field_agacOrganization">agacOrganization</label>
+            <select class="form-control" id="field_agacOrganization" name="agacOrganization" ng-model="aGACUserLink.agacOrganization" ng-options="aGACOrganization as aGACOrganization.id for aGACOrganization in agacorganizations track by aGACOrganization.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,153 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "authorizationSetLink",
+      "relationshipFieldName": "authorizationSetLink",
+      "otherEntityName": "authorizationSetLink",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "agacUser"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "agacUserLink",
+      "relationshipFieldName": "agacUserLink",
+      "otherEntityName": "aGACUserLink",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "status",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "login",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 20
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "externalId",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 25
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "gender",
+      "fieldType": "Gender",
+      "fieldValues": "MR,M,MS,MRS"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 20
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 50
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "language",
+      "fieldType": "Language",
+      "fieldValues": "FR,EN,DE"
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 100
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "phone",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 20
+    },
+    {
+      "fieldId": 10,
+      "fieldName": "cellularPhone",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 20
+    },
+    {
+      "fieldId": 11,
+      "fieldName": "fax",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 20
+    },
+    {
+      "fieldId": 12,
+      "fieldName": "authenticationType",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 13,
+      "fieldName": "theme",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 20
+    },
+    {
+      "fieldId": 14,
+      "fieldName": "creationDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 15,
+      "fieldName": "creatorUserId",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 16,
+      "fieldName": "modificationDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 17,
+      "fieldName": "updatorUserId",
+      "fieldType": "Long"
+    }
+  ],
+  "changelogDate": "20151205152004",
+  "dto": "no",
+  "pagination": "no",
+  "fieldsContainLocalDate": true,
+  "fieldsContainCustomTime": true
+}

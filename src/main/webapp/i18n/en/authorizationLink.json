@@ -1,0 +1,28 @@
+{
+    "olisParamsAndScriptsApp": {
+        "authorizationLink" : {
+            "home": {
+                "title": "AuthorizationLinks",
+                "createLabel": "Create a new AuthorizationLink",
+                "createOrEditLabel": "Create or edit a AuthorizationLink"
+            },
+            "created": "A new AuthorizationLink is created with identifier {{ param }}",
+            "updated": "A AuthorizationLink is updated with identifier {{ param }}",
+            "deleted": "A AuthorizationLink is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete AuthorizationLink {{ id }}?"
+            },
+            "detail": {
+                "title": "AuthorizationLink"
+            },
+            "status": "Status",
+            "validityStartDate": "ValidityStartDate",
+            "validityEndDate": "ValidityEndDate",
+            "creationDate": "CreationDate",
+            "creatorUserId": "CreatorUserId",
+            "modificationDate": "ModificationDate",
+            "updatorUserId": "UpdatorUserId",
+            "authorizationSet": "AuthorizationSet"
+        }
+    }
+}

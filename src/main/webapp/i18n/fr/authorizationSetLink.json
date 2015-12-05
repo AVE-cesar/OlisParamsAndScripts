@@ -1,0 +1,31 @@
+{
+    "olisParamsAndScriptsApp": {
+        "authorizationSetLink" : {
+            "home": {
+                "title": "AuthorizationSetLinks",
+                "createLabel": "Créer un nouveau AuthorizationSetLink",
+                "createOrEditLabel": "Créer ou éditer un AuthorizationSetLink"
+            },
+            "created": "Un nouveau AuthorizationSetLink a été créé avec l'identifiant {{ param }}",
+            "updated": "Le AuthorizationSetLink avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le AuthorizationSetLink avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le AuthorizationSetLink {{ id }} ?"
+            },
+            "detail": {
+                "title": "AuthorizationSetLink"
+            },
+            "status": "Status",
+            "validityStartDate": "ValidityStartDate",
+            "validityEndDate": "ValidityEndDate",
+            "creationDate": "CreationDate",
+            "creatorUserId": "CreatorUserId",
+            "modificationDate": "ModificationDate",
+            "updatorUserId": "UpdatorUserId",
+            "agacUser": "AgacUser",
+            "agacAuthorization": "AgacAuthorization",
+            "authorizationSet": "AuthorizationSet"
+        }
+    }
+}
+

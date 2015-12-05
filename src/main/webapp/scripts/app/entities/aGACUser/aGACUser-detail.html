@@ -1,0 +1,166 @@
+
+<div>
+    <h2><span translate="olisParamsAndScriptsApp.aGACUser.detail.title">AGACUser</span> {{aGACUser.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.status">Status</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACUser.status}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.login">Login</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACUser.login}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.externalId">ExternalId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACUser.externalId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.gender">Gender</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'olisParamsAndScriptsApp.Gender.' + aGACUser.gender}}">{{aGACUser.gender}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.firstName">FirstName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACUser.firstName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.lastName">LastName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACUser.lastName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.language">Language</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'olisParamsAndScriptsApp.Language.' + aGACUser.language}}">{{aGACUser.language}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.email">Email</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACUser.email}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.phone">Phone</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACUser.phone}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.cellularPhone">CellularPhone</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACUser.cellularPhone}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.fax">Fax</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACUser.fax}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.authenticationType">AuthenticationType</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACUser.authenticationType}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.theme">Theme</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACUser.theme}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.creationDate">CreationDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACUser.creationDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.creatorUserId">CreatorUserId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACUser.creatorUserId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.modificationDate">ModificationDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACUser.modificationDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.updatorUserId">UpdatorUserId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACUser.updatorUserId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACUser.agacUserLink">agacUserLink</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="aGACUserLink.detail({id:aGACUser.agacUserLink.id})">{{aGACUser.agacUserLink.id}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

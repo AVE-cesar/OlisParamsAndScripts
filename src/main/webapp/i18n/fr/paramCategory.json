@@ -1,0 +1,23 @@
+{
+    "olisParamsAndScriptsApp": {
+        "paramCategory" : {
+            "home": {
+                "title": "ParamCategorys",
+                "createLabel": "Créer un nouveau ParamCategory",
+                "createOrEditLabel": "Créer ou éditer un ParamCategory"
+            },
+            "created": "Un nouveau ParamCategory a été créé avec l'identifiant {{ param }}",
+            "updated": "Le ParamCategory avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le ParamCategory avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le ParamCategory {{ id }} ?"
+            },
+            "detail": {
+                "title": "ParamCategory"
+            },
+            "description": "Description",
+            "parameters": "Parameters"
+        }
+    }
+}
+

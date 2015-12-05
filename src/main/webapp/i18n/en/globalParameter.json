@@ -1,0 +1,24 @@
+{
+    "olisParamsAndScriptsApp": {
+        "globalParameter" : {
+            "home": {
+                "title": "GlobalParameters",
+                "createLabel": "Create a new GlobalParameter",
+                "createOrEditLabel": "Create or edit a GlobalParameter"
+            },
+            "created": "A new GlobalParameter is created with identifier {{ param }}",
+            "updated": "A GlobalParameter is updated with identifier {{ param }}",
+            "deleted": "A GlobalParameter is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete GlobalParameter {{ id }}?"
+            },
+            "detail": {
+                "title": "GlobalParameter"
+            },
+            "key": "Key",
+            "value": "Value",
+            "description": "Description",
+            "category": "Category"
+        }
+    }
+}

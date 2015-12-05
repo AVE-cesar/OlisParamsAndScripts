@@ -1,0 +1,23 @@
+{
+    "olisParamsAndScriptsApp": {
+        "datasourcePosition" : {
+            "home": {
+                "title": "DatasourcePositions",
+                "createLabel": "Create a new DatasourcePosition",
+                "createOrEditLabel": "Create or edit a DatasourcePosition"
+            },
+            "created": "A new DatasourcePosition is created with identifier {{ param }}",
+            "updated": "A DatasourcePosition is updated with identifier {{ param }}",
+            "deleted": "A DatasourcePosition is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete DatasourcePosition {{ id }}?"
+            },
+            "detail": {
+                "title": "DatasourcePosition"
+            },
+            "order": "Order",
+            "prompt": "Prompt",
+            "datasource": "Datasource"
+        }
+    }
+}

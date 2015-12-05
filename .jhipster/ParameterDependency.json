@@ -1,0 +1,49 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "promptFather",
+      "relationshipFieldName": "promptFather",
+      "otherEntityName": "prompt",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "promptChild",
+      "relationshipFieldName": "promptChild",
+      "otherEntityName": "prompt",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "type",
+      "fieldType": "DependencyType",
+      "fieldValues": "FIL,VIS,SCR",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "checkOperation",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 3
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "script",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20151122200754",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "PAR_LNK"
+}

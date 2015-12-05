@@ -1,0 +1,35 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "prompt",
+      "relationshipFieldName": "prompt",
+      "otherEntityName": "prompt",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "graphicalComponent",
+      "relationshipFieldName": "graphicalComponent",
+      "otherEntityName": "graphicalComponent",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "mode",
+      "fieldType": "Mode",
+      "fieldValues": "ONL,OFF,ALL",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20151122200754",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "PAR_CPO_LNK"
+}

@@ -1,0 +1,43 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "graphicalComponentLink",
+      "relationshipFieldName": "graphicalComponentLink",
+      "otherEntityName": "graphicalComponentLink",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "graphicalComponent"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "graphicalComponentParam",
+      "relationshipFieldName": "graphicalComponentParam",
+      "otherEntityName": "graphicalComponentParam",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "graphicalComponent"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "script",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 50
+    }
+  ],
+  "changelogDate": "20151122200754",
+  "dto": "no",
+  "pagination": "no",
+  "javadoc": "PAR_CPO"
+}

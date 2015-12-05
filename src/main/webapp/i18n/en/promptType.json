@@ -1,0 +1,9 @@
+{
+    "olisParamsAndScriptsApp": {
+        "PromptType" : {
+            "null": "",
+            "STR": "STR",
+            "INT": "INT"
+        }
+    }
+}

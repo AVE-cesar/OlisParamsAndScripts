@@ -1,0 +1,73 @@
+<div>
+    <h2 translate="olisParamsAndScriptsApp.authorizationSetLink.home.title">AuthorizationSetLinks</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="authorizationSetLink.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="olisParamsAndScriptsApp.authorizationSetLink.home.createLabel">Create a new AuthorizationSetLink</span>
+                </button>
+            </div>
+            <div class="col-md-8">
+                <form name="searchForm" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="query">
+                    </div>
+                    <button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a AuthorizationSetLink</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.field.id">ID</th>
+                    <th translate="olisParamsAndScriptsApp.authorizationSetLink.status">Status</th>
+                    <th translate="olisParamsAndScriptsApp.authorizationSetLink.validityStartDate">ValidityStartDate</th>
+                    <th translate="olisParamsAndScriptsApp.authorizationSetLink.validityEndDate">ValidityEndDate</th>
+                    <th translate="olisParamsAndScriptsApp.authorizationSetLink.creationDate">CreationDate</th>
+                    <th translate="olisParamsAndScriptsApp.authorizationSetLink.creatorUserId">CreatorUserId</th>
+                    <th translate="olisParamsAndScriptsApp.authorizationSetLink.modificationDate">ModificationDate</th>
+                    <th translate="olisParamsAndScriptsApp.authorizationSetLink.updatorUserId">UpdatorUserId</th>
+                    <th translate="olisParamsAndScriptsApp.authorizationSetLink.agacUser">agacUser</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="authorizationSetLink in authorizationSetLinks track by authorizationSetLink.id">
+                    <td><a ui-sref="authorizationSetLink.detail({id:authorizationSetLink.id})">{{authorizationSetLink.id}}</a></td>
+                    <td>{{authorizationSetLink.status}}</td>
+                        <td>{{authorizationSetLink.validityStartDate | date:'mediumDate'}}</td>
+                        <td>{{authorizationSetLink.validityEndDate | date:'mediumDate'}}</td>
+                        <td>{{authorizationSetLink.creationDate | date:'mediumDate'}}</td>
+                    <td>{{authorizationSetLink.creatorUserId}}</td>
+                        <td>{{authorizationSetLink.modificationDate | date:'mediumDate'}}</td>
+                    <td>{{authorizationSetLink.updatorUserId}}</td>
+                    <td>
+                        <a ui-sref="aGACUser.detail({id:authorizationSetLink.agacUser.id})">{{authorizationSetLink.agacUser.id}}</a>
+                    </td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="authorizationSetLink.detail({id:authorizationSetLink.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="authorizationSetLink.edit({id:authorizationSetLink.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="authorizationSetLink.delete({id:authorizationSetLink.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

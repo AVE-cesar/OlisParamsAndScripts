@@ -1,0 +1,29 @@
+{
+    "olisParamsAndScriptsApp": {
+        "aGACUserLink" : {
+            "home": {
+                "title": "AGACUserLinks",
+                "createLabel": "Create a new AGACUserLink",
+                "createOrEditLabel": "Create or edit a AGACUserLink"
+            },
+            "created": "A new AGACUserLink is created with identifier {{ param }}",
+            "updated": "A AGACUserLink is updated with identifier {{ param }}",
+            "deleted": "A AGACUserLink is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete AGACUserLink {{ id }}?"
+            },
+            "detail": {
+                "title": "AGACUserLink"
+            },
+            "status": "Status",
+            "validityStartDate": "ValidityStartDate",
+            "validityEndDate": "ValidityEndDate",
+            "creationDate": "CreationDate",
+            "creatorUserId": "CreatorUserId",
+            "modificationDate": "ModificationDate",
+            "updatorUserId": "UpdatorUserId",
+            "agacOrganization": "AgacOrganization",
+            "agacUser": "AgacUser"
+        }
+    }
+}

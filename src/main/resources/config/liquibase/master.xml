@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151115170913_added_entity_GlobalParameters.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151117203130_added_entity_ParamCategory.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151117203130_added_entity_GlobalParameter.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151122200754_added_entity_Prompt.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151122200754_added_entity_GraphicalComponent.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151122200754_added_entity_GraphicalComponentLink.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151122200754_added_entity_Datasource.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151122200754_added_entity_DatasourcePosition.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151122200754_added_entity_ParameterDependency.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151122200754_added_entity_CheckScript.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151122200754_added_entity_PromptPosition.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151122201310_added_entity_GraphicalComponentParam.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151122200754_added_entity_Report.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151205151743_added_entity_UserLink.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151205151743_added_entity_ProfileLink.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151205151743_added_entity_AuthorizationLink.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151205152004_added_entity_AGACUser.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151205153735_added_entity_AGACOrganization.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151205153735_added_entity_AGACUserLink.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151205153735_added_entity_AuthorizationSetLink.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151205153735_added_entity_AGACAuthorization.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151205153735_added_entity_AuthorizationSet.xml" relativeToChangelogFile="false"/>
+    <!-- JHipster will add liquibase changelogs here -->
+</databaseChangeLog>

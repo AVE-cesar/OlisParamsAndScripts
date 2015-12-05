@@ -1,0 +1,113 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "userLink",
+      "relationshipFieldName": "userLink",
+      "otherEntityName": "userLink",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "organization"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 100
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "label",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 100
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "type",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "status",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "rootOrganization",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "fatherOrganization",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "theme",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 10
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 30
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "level",
+      "fieldType": "Level",
+      "fieldValues": "ROOT,SUB"
+    },
+    {
+      "fieldId": 10,
+      "fieldName": "internal",
+      "fieldType": "BoolValue",
+      "fieldValues": "Y,N"
+    },
+    {
+      "fieldId": 11,
+      "fieldName": "creationDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 12,
+      "fieldName": "creatorUserId",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 13,
+      "fieldName": "modificationDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 14,
+      "fieldName": "updatorUserId",
+      "fieldType": "Long"
+    }
+  ],
+  "changelogDate": "20151205151743",
+  "dto": "no",
+  "pagination": "no",
+  "fieldsContainLocalDate": true,
+  "fieldsContainCustomTime": true
+}

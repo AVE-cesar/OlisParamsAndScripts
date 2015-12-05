@@ -1,0 +1,24 @@
+{
+    "olisParamsAndScriptsApp": {
+        "graphicalComponentLink" : {
+            "home": {
+                "title": "GraphicalComponentLinks",
+                "createLabel": "Créer un nouveau GraphicalComponentLink",
+                "createOrEditLabel": "Créer ou éditer un GraphicalComponentLink"
+            },
+            "created": "Un nouveau GraphicalComponentLink a été créé avec l'identifiant {{ param }}",
+            "updated": "Le GraphicalComponentLink avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le GraphicalComponentLink avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le GraphicalComponentLink {{ id }} ?"
+            },
+            "detail": {
+                "title": "GraphicalComponentLink"
+            },
+            "mode": "Mode",
+            "prompt": "Prompt",
+            "graphicalComponent": "GraphicalComponent"
+        }
+    }
+}
+

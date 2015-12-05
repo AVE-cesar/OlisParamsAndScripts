@@ -1,0 +1,134 @@
+
+<div>
+    <h2><span translate="olisParamsAndScriptsApp.aGACOrganization.detail.title">AGACOrganization</span> {{aGACOrganization.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACOrganization.code">Code</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACOrganization.code}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACOrganization.name">Name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACOrganization.name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACOrganization.type">Type</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACOrganization.type}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACOrganization.status">Status</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACOrganization.status}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACOrganization.rootOrganization">RootOrganization</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACOrganization.rootOrganization}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACOrganization.fatherOrganization">FatherOrganization</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACOrganization.fatherOrganization}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACOrganization.theme">Theme</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACOrganization.theme}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACOrganization.email">Email</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACOrganization.email}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACOrganization.level">Level</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'olisParamsAndScriptsApp.Level.' + aGACOrganization.level}}">{{aGACOrganization.level}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACOrganization.internal">Internal</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'olisParamsAndScriptsApp.BoolValue.' + aGACOrganization.internal}}">{{aGACOrganization.internal}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACOrganization.creationDate">CreationDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACOrganization.creationDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACOrganization.creatorUserId">CreatorUserId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACOrganization.creatorUserId}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACOrganization.modificationDate">ModificationDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACOrganization.modificationDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="olisParamsAndScriptsApp.aGACOrganization.updatorUserId">UpdatorUserId</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{aGACOrganization.updatorUserId}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
