@@ -1,16 +1,16 @@
-/** tables de droits */
+/** tables de droits (AUT_SVC) */
 entity AGACAuthorization {
   code String required maxlength(100),
   name String maxlength(100)
  }
 
-/** table des profiles */
+/** table des profiles (AUT_PRO) */
 entity AuthorizationSet {
   code String  maxlength(100),
   name String maxlength(100)
  }
  
-/** table des organisations */
+/** table des organisations (ORG)*/
 entity AGACOrganization {
 	code String  maxlength(100),
 	name String maxlength(100),
@@ -28,7 +28,7 @@ entity AGACOrganization {
   	updatorUserId Long
  }
 
-/** table des utilisateurs */
+/** table des utilisateurs (AGA_USR) */
 entity AGACUser {
 	status Long,
 	login String maxlength(20),
@@ -49,7 +49,7 @@ entity AGACUser {
   	updatorUserId Long 
 } 
 
-/** table de relations entre les autorisations et les profiles */
+/** table de relations entre les autorisations et les profiles (AUT_PRO_SVC) */
 entity AuthorizationLink {
 	status Long,
 	validityStartDate LocalDate,
@@ -60,7 +60,7 @@ entity AuthorizationLink {
   	updatorUserId Long 
 }
 
-/** table de relations entre les */
+/** table de relations entre les profiles et les utilisateurs (USR_AUT_PRO)*/
 entity AuthorizationSetLink {
 	status Long,
 	validityStartDate LocalDate,
@@ -71,7 +71,7 @@ entity AuthorizationSetLink {
   	updatorUserId Long 
 }
 
-/** table de relations entre les */
+/** table de relations entre les utilisateurs et les organisation (AGA_USR_ORG)*/
 entity AGACUserLink {
 	status Long,
 	validityStartDate LocalDate,
@@ -84,34 +84,32 @@ entity AGACUserLink {
 
 
 relationship ManyToOne{
-  AuthorizationSetLink{authorizationSet} to AuthorizationSet{authorizationSetLink} 
+  AuthorizationLink{authorizationSet} to AuthorizationSet{authorizationLink} 
 }
  
 relationship OneToMany{
-  AGACAuthorization{authorizationSetLink} to AuthorizationSetLink{agacAuthorization}
+  AGACAuthorization{authorizationLink} to AuthorizationLink{agacAuthorization}
 }
 
 
-
-
-
-
-
-relationship OneToMany{
-  AuthorizationSet{authorizationLink} to AuthorizationLink{authorizationSet}
-}
-
-relationship OneToMany{
-  AGACUser{authorizationSetLink} to AuthorizationSetLink{agacUser}
+relationship ManyToOne{
+  AuthorizationSetLink{agacUser} to AGACUser{authorizationSetLink} 
 }
  
 relationship OneToMany{
-  AGACUserLink{agacUser} to AGACUser{agacUserLink}
+  AuthorizationSet{authorizationSetLink} to AuthorizationSetLink{authorizationSet}
 }
 
-relationship OneToMany{
-  AGACOrganization{agacUserLink} to AGACUserLink{agacOrganization}
+
+relationship ManyToOne{
+  AGACUserLink{agacOrganization} to AGACOrganization{agacUserLink} 
 }
+ 
+relationship OneToMany{
+  AGACUser{agacUserLink} to AGACUserLink{agacUser}
+}
+
+
 
 enum Level {
     ROOT, SUB

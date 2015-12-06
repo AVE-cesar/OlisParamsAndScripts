@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('olisParamsAndScriptsApp').controller('AuthorizationLinkDialogController',
-    ['$scope', '$stateParams', '$modalInstance', 'entity', 'AuthorizationLink', 'AuthorizationSet',
-        function($scope, $stateParams, $modalInstance, entity, AuthorizationLink, AuthorizationSet) {
+    ['$scope', '$stateParams', '$modalInstance', 'entity', 'AuthorizationLink', 'AGACAuthorization', 'AuthorizationSet',
+        function($scope, $stateParams, $modalInstance, entity, AuthorizationLink, AGACAuthorization, AuthorizationSet) {
 
         $scope.authorizationLink = entity;
+        $scope.agacauthorizations = AGACAuthorization.query();
         $scope.authorizationsets = AuthorizationSet.query();
         $scope.load = function(id) {
             AuthorizationLink.get({id : id}, function(result) {

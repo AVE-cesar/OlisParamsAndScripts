@@ -90,6 +90,18 @@ public class AGACOrganizationResource {
     }
 
     /**
+     * B. AVE.
+     */
+    @RequestMapping(value = "/reIndexAGACOrganizations",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public void reIndexAGACOrganizations() {
+        log.debug("REST request to re-index all AGACOrganizations");
+        aGACOrganizationRepository.findAll().forEach(p -> aGACOrganizationSearchRepository.index(p));
+    }
+    
+    /**
      * GET  /aGACOrganizations/:id -> get the "id" aGACOrganization.
      */
     @RequestMapping(value = "/aGACOrganizations/{id}",

@@ -12,41 +12,46 @@ import java.util.Set;
 import java.util.Objects;
 
 /**
- * table de relations entre les autorisations et les profiles
+ * table de relations entre les autorisations et les profiles (AUT_PRO_SVC)
  */
 @Entity
-@Table(name = "authorization_link")
+@Table(name = "AUT_PRO_SVC")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "authorizationlink")
 public class AuthorizationLink implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID")
+	@Column(name = "AUT_PRO_SVC_IDE")
     private Long id;
 
-    @Column(name = "status")
+    @Column(name = "IDE_STA")
     private Long status;
 
-    @Column(name = "validity_start_date")
+    @Column(name = "VAL_STT_DTE")
     private LocalDate validityStartDate;
 
-    @Column(name = "validity_end_date")
+    @Column(name = "VAL_END_DTE")
     private LocalDate validityEndDate;
 
-    @Column(name = "creation_date")
+    @Column(name = "CRE_DTE")
     private LocalDate creationDate;
 
-    @Column(name = "creator_user_id")
+    @Column(name = "CRE_USR")
     private Long creatorUserId;
 
-    @Column(name = "modification_date")
+    @Column(name = "UPD_DTE")
     private LocalDate modificationDate;
 
-    @Column(name = "updator_user_id")
+    @Column(name = "UPD_USR")
     private Long updatorUserId;
 
     @ManyToOne
+    @JoinColumn(name="AUT_SVC_IDE")
+    private AGACAuthorization agacAuthorization;
+
+    @ManyToOne
+    @JoinColumn(name="AUT_PRO_IDE")
     private AuthorizationSet authorizationSet;
 
     public Long getId() {
@@ -111,6 +116,14 @@ public class AuthorizationLink implements Serializable {
 
     public void setUpdatorUserId(Long updatorUserId) {
         this.updatorUserId = updatorUserId;
+    }
+
+    public AGACAuthorization getAgacAuthorization() {
+        return agacAuthorization;
+    }
+
+    public void setAgacAuthorization(AGACAuthorization aGACAuthorization) {
+        this.agacAuthorization = aGACAuthorization;
     }
 
     public AuthorizationSet getAuthorizationSet() {

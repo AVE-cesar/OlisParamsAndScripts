@@ -2,14 +2,6 @@
   "relationships": [
     {
       "relationshipId": 1,
-      "relationshipName": "agacAuthorization",
-      "relationshipFieldName": "agacAuthorization",
-      "otherEntityName": "aGACAuthorization",
-      "relationshipType": "many-to-one",
-      "otherEntityField": "id"
-    },
-    {
-      "relationshipId": 2,
       "relationshipName": "authorizationSet",
       "relationshipFieldName": "authorizationSet",
       "otherEntityName": "authorizationSet",
@@ -17,7 +9,7 @@
       "otherEntityField": "id"
     },
     {
-      "relationshipId": 3,
+      "relationshipId": 2,
       "relationshipName": "agacUser",
       "relationshipFieldName": "agacUser",
       "otherEntityName": "aGACUser",
@@ -65,7 +57,7 @@
   "changelogDate": "20151205153735",
   "dto": "no",
   "pagination": "no",
-  "javadoc": "table de relations entre les",
+  "javadoc": "table de relations entre les profiles et les utilisateurs (USR_AUT_PRO)",
   "fieldsContainLocalDate": true,
   "fieldsContainCustomTime": true
 }

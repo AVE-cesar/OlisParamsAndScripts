@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('olisParamsAndScriptsApp')
-    .controller('AGACAuthorizationDetailController', function ($scope, $rootScope, $stateParams, entity, AGACAuthorization, AuthorizationSetLink) {
+    .controller('AGACAuthorizationDetailController', function ($scope, $rootScope, $stateParams, entity, AGACAuthorization, AuthorizationLink) {
         $scope.aGACAuthorization = entity;
         $scope.load = function (id) {
             AGACAuthorization.get({id: id}, function(result) {

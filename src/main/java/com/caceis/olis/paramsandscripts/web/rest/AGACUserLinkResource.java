@@ -89,6 +89,18 @@ public class AGACUserLinkResource {
     }
 
     /**
+     * B. AVE.
+     */
+    @RequestMapping(value = "/reIndexAGACUserLinks",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public void reIndexAGACUserLinks() {
+        log.debug("REST request to re-index all AGACUserLinks");
+        aGACUserLinkRepository.findAll().forEach(p -> aGACUserLinkSearchRepository.index(p));
+    }
+    
+    /**
      * GET  /aGACUserLinks/:id -> get the "id" aGACUserLink.
      */
     @RequestMapping(value = "/aGACUserLinks/{id}",

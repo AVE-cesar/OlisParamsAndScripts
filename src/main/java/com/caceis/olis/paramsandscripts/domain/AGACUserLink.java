@@ -1,6 +1,5 @@
 package com.caceis.olis.paramsandscripts.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import java.time.LocalDate;
@@ -13,47 +12,47 @@ import java.util.Set;
 import java.util.Objects;
 
 /**
- * table de relations entre les
+ * table de relations entre les utilisateurs et les organisation (AGA_USR_ORG)
  */
 @Entity
-@Table(name = "agacuser_link")
+@Table(name = "AGA_USR_ORG")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "agacuserlink")
 public class AGACUserLink implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID")
+	@Column(name = "AGA_USR_ORG_IDE")
     private Long id;
 
-    @Column(name = "status")
+    @Column(name = "IDE_STA")
     private Long status;
 
-    @Column(name = "validity_start_date")
+    @Column(name = "VAL_STT_DTE")
     private LocalDate validityStartDate;
 
-    @Column(name = "validity_end_date")
+    @Column(name = "VAL_END_DTE")
     private LocalDate validityEndDate;
 
-    @Column(name = "creation_date")
+    @Column(name = "CRE_DTE")
     private LocalDate creationDate;
 
-    @Column(name = "creator_user_id")
+    @Column(name = "CRE_USR")
     private Long creatorUserId;
 
-    @Column(name = "modification_date")
+    @Column(name = "UPD_DTE")
     private LocalDate modificationDate;
 
-    @Column(name = "updator_user_id")
+    @Column(name = "UPD_USR")
     private Long updatorUserId;
 
     @ManyToOne
+    @JoinColumn(name="ORG_IDE")
     private AGACOrganization agacOrganization;
 
-    @OneToMany(mappedBy = "agacUserLink")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AGACUser> agacUsers = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name="USR_IDE")
+    private AGACUser agacUser;
 
     public Long getId() {
         return id;
@@ -127,12 +126,12 @@ public class AGACUserLink implements Serializable {
         this.agacOrganization = aGACOrganization;
     }
 
-    public Set<AGACUser> getAgacUsers() {
-        return agacUsers;
+    public AGACUser getAgacUser() {
+        return agacUser;
     }
 
-    public void setAgacUsers(Set<AGACUser> aGACUsers) {
-        this.agacUsers = aGACUsers;
+    public void setAgacUser(AGACUser aGACUser) {
+        this.agacUser = aGACUser;
     }
 
     @Override

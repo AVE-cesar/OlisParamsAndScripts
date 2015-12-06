@@ -33,6 +33,7 @@
                     <th translate="olisParamsAndScriptsApp.aGACUserLink.modificationDate">ModificationDate</th>
                     <th translate="olisParamsAndScriptsApp.aGACUserLink.updatorUserId">UpdatorUserId</th>
                     <th translate="olisParamsAndScriptsApp.aGACUserLink.agacOrganization">agacOrganization</th>
+                    <th translate="olisParamsAndScriptsApp.aGACUserLink.agacUser">agacUser</th>
                     <th></th>
                 </tr>
             </thead>
@@ -48,6 +49,9 @@
                     <td>{{aGACUserLink.updatorUserId}}</td>
                     <td>
                         <a ui-sref="aGACOrganization.detail({id:aGACUserLink.agacOrganization.id})">{{aGACUserLink.agacOrganization.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="aGACUser.detail({id:aGACUserLink.agacUser.id})">{{aGACUserLink.agacUser.id}}</a>
                     </td>
                     <td>
                         <button type="submit"

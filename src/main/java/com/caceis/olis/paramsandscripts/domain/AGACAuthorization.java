@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.Objects;
 
 /**
- * tables de droits
+ * tables de droits (AUT_SVC)
  */
 @Entity
 @Table(name = "AUT_SVC")
@@ -38,7 +38,7 @@ public class AGACAuthorization implements Serializable {
     @OneToMany(mappedBy = "agacAuthorization")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AuthorizationSetLink> authorizationSetLinks = new HashSet<>();
+    private Set<AuthorizationLink> authorizationLinks = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -64,12 +64,12 @@ public class AGACAuthorization implements Serializable {
         this.name = name;
     }
 
-    public Set<AuthorizationSetLink> getAuthorizationSetLinks() {
-        return authorizationSetLinks;
+    public Set<AuthorizationLink> getAuthorizationLinks() {
+        return authorizationLinks;
     }
 
-    public void setAuthorizationSetLinks(Set<AuthorizationSetLink> authorizationSetLinks) {
-        this.authorizationSetLinks = authorizationSetLinks;
+    public void setAuthorizationLinks(Set<AuthorizationLink> authorizationLinks) {
+        this.authorizationLinks = authorizationLinks;
     }
 
     @Override

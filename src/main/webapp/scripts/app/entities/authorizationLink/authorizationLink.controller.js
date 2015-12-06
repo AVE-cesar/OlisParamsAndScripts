@@ -9,7 +9,7 @@ angular.module('olisParamsAndScriptsApp')
                $scope.authorizationLinks = result;
             });
         };
-        $scope.loadAll();
+        //$scope.loadAll();
 
 
         $scope.search = function () {

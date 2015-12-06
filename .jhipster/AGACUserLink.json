@@ -13,8 +13,8 @@
       "relationshipName": "agacUser",
       "relationshipFieldName": "agacUser",
       "otherEntityName": "aGACUser",
-      "relationshipType": "one-to-many",
-      "otherEntityRelationshipName": "agacUserLink"
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
     }
   ],
   "fields": [
@@ -57,7 +57,7 @@
   "changelogDate": "20151205153735",
   "dto": "no",
   "pagination": "no",
-  "javadoc": "table de relations entre les",
+  "javadoc": "table de relations entre les utilisateurs et les organisation (AGA_USR_ORG)",
   "fieldsContainLocalDate": true,
   "fieldsContainCustomTime": true
 }

@@ -12,17 +12,17 @@ import java.util.Set;
 import java.util.Objects;
 
 /**
- * table de relations entre les
+ * table de relations entre les profiles et les utilisateurs (USR_AUT_PRO)
  */
 @Entity
-@Table(name = "AUT_PRO_SVC")
+@Table(name = "USR_AUT_PRO")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "authorizationsetlink")
 public class AuthorizationSetLink implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "AUT_PRO_SVC_IDE")
+	@Column(name = "USR_AUT_PRO_IDE")
     private Long id;
 
     @Column(name = "IDE_STA")
@@ -47,12 +47,11 @@ public class AuthorizationSetLink implements Serializable {
     private Long updatorUserId;
 
     @ManyToOne
-    private AGACAuthorization agacAuthorization;
-
-    @ManyToOne
+    @JoinColumn(name="AUT_PRO_IDE")
     private AuthorizationSet authorizationSet;
 
     @ManyToOne
+    @JoinColumn(name="USR_IDE")
     private AGACUser agacUser;
 
     public Long getId() {
@@ -117,14 +116,6 @@ public class AuthorizationSetLink implements Serializable {
 
     public void setUpdatorUserId(Long updatorUserId) {
         this.updatorUserId = updatorUserId;
-    }
-
-    public AGACAuthorization getAgacAuthorization() {
-        return agacAuthorization;
-    }
-
-    public void setAgacAuthorization(AGACAuthorization aGACAuthorization) {
-        this.agacAuthorization = aGACAuthorization;
     }
 
     public AuthorizationSet getAuthorizationSet() {

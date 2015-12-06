@@ -32,6 +32,7 @@
                     <th translate="olisParamsAndScriptsApp.authorizationLink.creatorUserId">CreatorUserId</th>
                     <th translate="olisParamsAndScriptsApp.authorizationLink.modificationDate">ModificationDate</th>
                     <th translate="olisParamsAndScriptsApp.authorizationLink.updatorUserId">UpdatorUserId</th>
+                    <th translate="olisParamsAndScriptsApp.authorizationLink.agacAuthorization">agacAuthorization</th>
                     <th translate="olisParamsAndScriptsApp.authorizationLink.authorizationSet">authorizationSet</th>
                     <th></th>
                 </tr>
@@ -46,6 +47,9 @@
                     <td>{{authorizationLink.creatorUserId}}</td>
                         <td>{{authorizationLink.modificationDate | date:'mediumDate'}}</td>
                     <td>{{authorizationLink.updatorUserId}}</td>
+                    <td>
+                        <a ui-sref="aGACAuthorization.detail({id:authorizationLink.agacAuthorization.id})">{{authorizationLink.agacAuthorization.id}}</a>
+                    </td>
                     <td>
                         <a ui-sref="authorizationSet.detail({id:authorizationLink.authorizationSet.id})">{{authorizationLink.authorizationSet.id}}</a>
                     </td>

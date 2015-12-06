@@ -89,6 +89,18 @@ public class AuthorizationSetLinkResource {
     }
 
     /**
+     * B. AVE.
+     */
+    @RequestMapping(value = "/reIndexAuthorizationSetLinks",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public void reIndexAuthorizationSetLinks() {
+        log.debug("REST request to re-index all AuthorizationSetLinks");
+        authorizationSetLinkRepository.findAll().forEach(p -> authorizationSetLinkSearchRepository.index(p));
+    }
+    
+    /**
      * GET  /authorizationSetLinks/:id -> get the "id" authorizationSetLink.
      */
     @RequestMapping(value = "/authorizationSetLinks/{id}",

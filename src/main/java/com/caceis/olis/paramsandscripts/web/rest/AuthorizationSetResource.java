@@ -90,6 +90,18 @@ public class AuthorizationSetResource {
     }
 
     /**
+     * B. AVE.
+     */
+    @RequestMapping(value = "/reIndexAuthorizationSets",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public void reIndexAuthorizationSets() {
+        log.debug("REST request to re-index all AuthorizationSets");
+        authorizationSetRepository.findAll().forEach(p -> authorizationSetSearchRepository.index(p));
+    }
+    
+    /**
      * GET  /authorizationSets/:id -> get the "id" authorizationSet.
      */
     @RequestMapping(value = "/authorizationSets/{id}",

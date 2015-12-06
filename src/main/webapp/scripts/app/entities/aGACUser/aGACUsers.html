@@ -42,7 +42,6 @@
                     <th translate="olisParamsAndScriptsApp.aGACUser.creatorUserId">CreatorUserId</th>
                     <th translate="olisParamsAndScriptsApp.aGACUser.modificationDate">ModificationDate</th>
                     <th translate="olisParamsAndScriptsApp.aGACUser.updatorUserId">UpdatorUserId</th>
-                    <th translate="olisParamsAndScriptsApp.aGACUser.agacUserLink">agacUserLink</th>
                     <th></th>
                 </tr>
             </thead>
@@ -66,9 +65,6 @@
                     <td>{{aGACUser.creatorUserId}}</td>
                         <td>{{aGACUser.modificationDate | date:'mediumDate'}}</td>
                     <td>{{aGACUser.updatorUserId}}</td>
-                    <td>
-                        <a ui-sref="aGACUserLink.detail({id:aGACUser.agacUserLink.id})">{{aGACUser.agacUserLink.id}}</a>
-                    </td>
                     <td>
                         <button type="submit"
                                 ui-sref="aGACUser.detail({id:aGACUser.id})"

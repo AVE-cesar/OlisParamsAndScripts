@@ -18,80 +18,80 @@ import com.caceis.olis.paramsandscripts.domain.enumeration.Gender;
 import com.caceis.olis.paramsandscripts.domain.enumeration.Language;
 
 /**
- * table des utilisateurs
+ * table des utilisateurs (AGA_USR)
  */
 @Entity
-@Table(name = "agacuser")
+@Table(name = "AGA_USR")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "agacuser")
 public class AGACUser implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID")
+	@Column(name = "USR_IDE")
     private Long id;
 
-    @Column(name = "status")
+    @Column(name = "IDE_STA")
     private Long status;
 
     @Size(max = 20)
-    @Column(name = "login", length = 20)
+    @Column(name = "USR_NME", length = 20)
     private String login;
 
     @Size(max = 25)
-    @Column(name = "external_id", length = 25)
+    @Column(name = "EXT_IDE", length = 25)
     private String externalId;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "gender")
+    @Column(name = "TTL")
     private Gender gender;
 
     @Size(max = 20)
-    @Column(name = "first_name", length = 20)
+    @Column(name = "FST_NME", length = 20)
     private String firstName;
 
     @Size(max = 50)
-    @Column(name = "last_name", length = 50)
+    @Column(name = "LAS_NME", length = 50)
     private String lastName;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "language")
+    @Column(name = "LNG")
     private Language language;
 
     @Size(max = 100)
-    @Column(name = "email", length = 100)
+    @Column(name = "MAL", length = 100)
     private String email;
 
     @Size(max = 20)
-    @Column(name = "phone", length = 20)
+    @Column(name = "TEL", length = 20)
     private String phone;
 
     @Size(max = 20)
-    @Column(name = "cellular_phone", length = 20)
+    @Column(name = "CEL", length = 20)
     private String cellularPhone;
 
     @Size(max = 20)
-    @Column(name = "fax", length = 20)
+    @Column(name = "FAX", length = 20)
     private String fax;
 
-    @Column(name = "authentication_type")
+    @Column(name = "TYPE_AUTHE")
     private Long authenticationType;
 
     @Size(max = 20)
-    @Column(name = "theme", length = 20)
+    @Column(name = "CD_DESIGN", length = 20)
     private String theme;
 
-    @Column(name = "creation_date")
+    @Column(name = "CRE_DTE")
     private LocalDate creationDate;
 
     @NotNull
-    @Column(name = "creator_user_id", nullable = false)
+    @Column(name = "CRE_USR", nullable = false)
     private Long creatorUserId;
 
-    @Column(name = "modification_date", nullable = false)
+    @Column(name = "MOD_DTE", nullable = false)
     private LocalDate modificationDate;
 
-    @Column(name = "updator_user_id")
+    @Column(name = "UPD_USR")
     private Long updatorUserId;
 
     @OneToMany(mappedBy = "agacUser")
@@ -99,8 +99,10 @@ public class AGACUser implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<AuthorizationSetLink> authorizationSetLinks = new HashSet<>();
 
-    @ManyToOne
-    private AGACUserLink agacUserLink;
+    @OneToMany(mappedBy = "agacUser")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<AGACUserLink> agacUserLinks = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -254,12 +256,12 @@ public class AGACUser implements Serializable {
         this.authorizationSetLinks = authorizationSetLinks;
     }
 
-    public AGACUserLink getAgacUserLink() {
-        return agacUserLink;
+    public Set<AGACUserLink> getAgacUserLinks() {
+        return agacUserLinks;
     }
 
-    public void setAgacUserLink(AGACUserLink aGACUserLink) {
-        this.agacUserLink = aGACUserLink;
+    public void setAgacUserLinks(Set<AGACUserLink> aGACUserLinks) {
+        this.agacUserLinks = aGACUserLinks;
     }
 
     @Override

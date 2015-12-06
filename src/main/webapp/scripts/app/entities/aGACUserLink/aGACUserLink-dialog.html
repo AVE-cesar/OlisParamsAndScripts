@@ -62,6 +62,12 @@
                 <option value=""></option>
             </select>
         </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.aGACUserLink.agacUser" for="field_agacUser">agacUser</label>
+            <select class="form-control" id="field_agacUser" name="agacUser" ng-model="aGACUserLink.agacUser" ng-options="aGACUser as aGACUser.id for aGACUser in agacusers track by aGACUser.id">
+                <option value=""></option>
+            </select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">

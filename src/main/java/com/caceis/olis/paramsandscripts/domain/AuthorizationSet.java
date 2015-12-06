@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.Objects;
 
 /**
- * table des profiles
+ * table des profiles (AUT_PRO)
  */
 @Entity
 @Table(name = "AUT_PRO")
@@ -37,12 +37,12 @@ public class AuthorizationSet implements Serializable {
     @OneToMany(mappedBy = "authorizationSet")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AuthorizationSetLink> authorizationSetLinks = new HashSet<>();
+    private Set<AuthorizationLink> authorizationLinks = new HashSet<>();
 
     @OneToMany(mappedBy = "authorizationSet")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AuthorizationLink> authorizationLinks = new HashSet<>();
+    private Set<AuthorizationSetLink> authorizationSetLinks = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -68,20 +68,20 @@ public class AuthorizationSet implements Serializable {
         this.name = name;
     }
 
-    public Set<AuthorizationSetLink> getAuthorizationSetLinks() {
-        return authorizationSetLinks;
-    }
-
-    public void setAuthorizationSetLinks(Set<AuthorizationSetLink> authorizationSetLinks) {
-        this.authorizationSetLinks = authorizationSetLinks;
-    }
-
     public Set<AuthorizationLink> getAuthorizationLinks() {
         return authorizationLinks;
     }
 
     public void setAuthorizationLinks(Set<AuthorizationLink> authorizationLinks) {
         this.authorizationLinks = authorizationLinks;
+    }
+
+    public Set<AuthorizationSetLink> getAuthorizationSetLinks() {
+        return authorizationSetLinks;
+    }
+
+    public void setAuthorizationSetLinks(Set<AuthorizationSetLink> authorizationSetLinks) {
+        this.authorizationSetLinks = authorizationSetLinks;
     }
 
     @Override

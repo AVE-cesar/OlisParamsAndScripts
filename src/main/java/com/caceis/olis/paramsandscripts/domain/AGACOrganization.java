@@ -18,67 +18,67 @@ import com.caceis.olis.paramsandscripts.domain.enumeration.Level;
 import com.caceis.olis.paramsandscripts.domain.enumeration.BoolValue;
 
 /**
- * table des organisations
+ * table des organisations (ORG)
  */
 @Entity
-@Table(name = "agacorganization")
+@Table(name = "ORG")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "agacorganization")
 public class AGACOrganization implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID")
+	@Column(name = "ORG_IDE")
     private Long id;
 
     @Size(max = 100)
-    @Column(name = "code", length = 100)
+    @Column(name = "ORG_CDE", length = 100)
     private String code;
 
     @Size(max = 100)
-    @Column(name = "name", length = 100)
+    @Column(name = "LIB", length = 100)
     private String name;
 
-    @Column(name = "type")
+    @Column(name = "ORG_TYP_IDE")
     private Long type;
 
-    @Column(name = "status")
+    @Column(name = "IDE_STA")
     private Long status;
 
-    @Column(name = "root_organization")
+    @Column(name = "ROO_ORG_IDE")
     private Long rootOrganization;
 
-    @Column(name = "father_organization")
+    @Column(name = "MOO_ORG_IDE")
     private Long fatherOrganization;
 
     @Size(max = 10)
-    @Column(name = "theme", length = 10)
+    @Column(name = "DES_IDE", length = 10)
     private String theme;
 
     @Size(max = 30)
-    @Column(name = "email", length = 30)
+    @Column(name = "ORG_MAL", length = 30)
     private String email;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "level")
+    @Column(name = "LVL")
     private Level level;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "internal")
+    @Column(name = "INL")
     private BoolValue internal;
 
     @NotNull
-    @Column(name = "creation_date", nullable = false)
+    @Column(name = "CRE_DTE", nullable = false)
     private LocalDate creationDate;
 
     @NotNull
-    @Column(name = "creator_user_id", nullable = false)
+    @Column(name = "CRE_USR", nullable = false)
     private Long creatorUserId;
 
-    @Column(name = "modification_date", nullable = false)
+    @Column(name = "MOD_DTE", nullable = false)
     private LocalDate modificationDate;
 
-    @Column(name = "updator_user_id")
+    @Column(name = "UPD_USR")
     private Long updatorUserId;
 
     @OneToMany(mappedBy = "agacOrganization")

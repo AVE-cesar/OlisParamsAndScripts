@@ -13,8 +13,8 @@
       "relationshipName": "agacUserLink",
       "relationshipFieldName": "agacUserLink",
       "otherEntityName": "aGACUserLink",
-      "relationshipType": "many-to-one",
-      "otherEntityField": "id"
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "agacUser"
     }
   ],
   "fields": [
@@ -148,7 +148,7 @@
   "changelogDate": "20151205152004",
   "dto": "no",
   "pagination": "no",
-  "javadoc": "table des utilisateurs",
+  "javadoc": "table des utilisateurs (AGA_USR)",
   "fieldsContainLocalDate": true,
   "fieldsContainCustomTime": true
 }

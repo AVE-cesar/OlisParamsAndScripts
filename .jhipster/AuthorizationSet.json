@@ -2,17 +2,17 @@
   "relationships": [
     {
       "relationshipId": 1,
-      "relationshipName": "authorizationSetLink",
-      "relationshipFieldName": "authorizationSetLink",
-      "otherEntityName": "authorizationSetLink",
+      "relationshipName": "authorizationLink",
+      "relationshipFieldName": "authorizationLink",
+      "otherEntityName": "authorizationLink",
       "relationshipType": "one-to-many",
       "otherEntityRelationshipName": "authorizationSet"
     },
     {
       "relationshipId": 2,
-      "relationshipName": "authorizationLink",
-      "relationshipFieldName": "authorizationLink",
-      "otherEntityName": "authorizationLink",
+      "relationshipName": "authorizationSetLink",
+      "relationshipFieldName": "authorizationSetLink",
+      "otherEntityName": "authorizationSetLink",
       "relationshipType": "one-to-many",
       "otherEntityRelationshipName": "authorizationSet"
     }
@@ -40,5 +40,5 @@
   "changelogDate": "20151205153735",
   "dto": "no",
   "pagination": "no",
-  "javadoc": "table des profiles"
+  "javadoc": "table des profiles (AUT_PRO)"
 }

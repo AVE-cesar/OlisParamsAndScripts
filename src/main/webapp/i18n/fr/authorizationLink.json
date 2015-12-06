@@ -22,6 +22,7 @@
             "creatorUserId": "CreatorUserId",
             "modificationDate": "ModificationDate",
             "updatorUserId": "UpdatorUserId",
+            "agacAuthorization": "AgacAuthorization",
             "authorizationSet": "AuthorizationSet"
         }
     }

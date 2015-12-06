@@ -90,6 +90,18 @@ public class AGACAuthorizationResource {
     }
 
     /**
+     * B. AVE.
+     */
+    @RequestMapping(value = "/reIndexAGACAuthorizations",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public void reIndexAGACAuthorizations() {
+        log.debug("REST request to re-index all AGACAuthorizations");
+        aGACAuthorizationRepository.findAll().forEach(p -> aGACAuthorizationSearchRepository.index(p));
+    }
+    
+    /**
      * GET  /aGACAuthorizations/:id -> get the "id" aGACAuthorization.
      */
     @RequestMapping(value = "/aGACAuthorizations/{id}",

@@ -2,7 +2,7 @@
 
 describe('AGACAuthorization Detail Controller', function() {
     var $scope, $rootScope;
-    var MockEntity, MockAGACAuthorization, MockAuthorizationSetLink;
+    var MockEntity, MockAGACAuthorization, MockAuthorizationLink;
     var createController;
 
     beforeEach(inject(function($injector) {
@@ -10,7 +10,7 @@ describe('AGACAuthorization Detail Controller', function() {
         $scope = $rootScope.$new();
         MockEntity = jasmine.createSpy('MockEntity');
         MockAGACAuthorization = jasmine.createSpy('MockAGACAuthorization');
-        MockAuthorizationSetLink = jasmine.createSpy('MockAuthorizationSetLink');
+        MockAuthorizationLink = jasmine.createSpy('MockAuthorizationLink');
         
 
         var locals = {
@@ -18,7 +18,7 @@ describe('AGACAuthorization Detail Controller', function() {
             '$rootScope': $rootScope,
             'entity': MockEntity ,
             'AGACAuthorization': MockAGACAuthorization,
-            'AuthorizationSetLink': MockAuthorizationSetLink
+            'AuthorizationLink': MockAuthorizationLink
         };
         createController = function() {
             $injector.get('$controller')("AGACAuthorizationDetailController", locals);

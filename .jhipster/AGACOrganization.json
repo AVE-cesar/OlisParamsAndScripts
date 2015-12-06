@@ -108,7 +108,7 @@
   "changelogDate": "20151205153735",
   "dto": "no",
   "pagination": "no",
-  "javadoc": "table des organisations",
+  "javadoc": "table des organisations (ORG)",
   "fieldsContainLocalDate": true,
   "fieldsContainCustomTime": true
 }
