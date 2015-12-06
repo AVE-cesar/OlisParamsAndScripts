@@ -5,6 +5,8 @@ import com.caceis.olis.paramsandscripts.domain.AGACOrganization;
 import com.caceis.olis.paramsandscripts.repository.AGACOrganizationRepository;
 import com.caceis.olis.paramsandscripts.repository.search.AGACOrganizationSearchRepository;
 import com.caceis.olis.paramsandscripts.web.rest.util.HeaderUtil;
+
+import org.elasticsearch.index.query.QueryStringQueryBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
@@ -140,8 +142,10 @@ public class AGACOrganizationResource {
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public List<AGACOrganization> searchAGACOrganizations(@PathVariable String query) {
+    	log.debug("query ElasticSearch: " + query);
+    	QueryStringQueryBuilder builder = queryStringQuery(query);
         return StreamSupport
-            .stream(aGACOrganizationSearchRepository.search(queryStringQuery(query)).spliterator(), false)
+            .stream(aGACOrganizationSearchRepository.search(builder).spliterator(), false)
             .collect(Collectors.toList());
     }
 }

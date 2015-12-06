@@ -98,7 +98,7 @@ public class AGACUserResource {
     @Timed
     public void reIndexAGACUsers() {
         log.debug("REST request to re-index all AGACUsers");
-        aGACUserRepository.findAll().forEach(p -> aGACUserSearchRepository.index(p));
+        aGACUserRepository.findAll().forEach(p -> {log.debug("indexing " + p.getId());aGACUserSearchRepository.index(p);});
     }
     
     /**
