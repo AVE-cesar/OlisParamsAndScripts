@@ -1,16 +1,16 @@
-
+/** tables de droits */
 entity AGACAuthorization {
   code String required maxlength(100),
   name String maxlength(100)
  }
 
- 
+/** table des profiles */
 entity AuthorizationSet {
   code String  maxlength(100),
   name String maxlength(100)
  }
  
-
+/** table des organisations */
 entity AGACOrganization {
 	code String  maxlength(100),
 	name String maxlength(100),
@@ -28,7 +28,7 @@ entity AGACOrganization {
   	updatorUserId Long
  }
 
-
+/** table des utilisateurs */
 entity AGACUser {
 	status Long,
 	login String maxlength(20),
@@ -48,7 +48,8 @@ entity AGACUser {
   	modificationDate LocalDate,
   	updatorUserId Long 
 } 
- 
+
+/** table de relations entre les autorisations et les profiles */
 entity AuthorizationLink {
 	status Long,
 	validityStartDate LocalDate,
@@ -59,6 +60,7 @@ entity AuthorizationLink {
   	updatorUserId Long 
 }
 
+/** table de relations entre les */
 entity AuthorizationSetLink {
 	status Long,
 	validityStartDate LocalDate,
@@ -68,7 +70,8 @@ entity AuthorizationSetLink {
   	modificationDate LocalDate,
   	updatorUserId Long 
 }
- 
+
+/** table de relations entre les */
 entity AGACUserLink {
 	status Long,
 	validityStartDate LocalDate,
@@ -80,16 +83,22 @@ entity AGACUserLink {
 } 
 
 
-relationship OneToMany{
-  AuthorizationSetLink{agacAuthorization} to AGACAuthorization{authorizationSetLink}
+relationship ManyToOne{
+  AuthorizationSetLink{authorizationSet} to AuthorizationSet{authorizationSetLink} 
 }
+ 
+relationship OneToMany{
+  AGACAuthorization{authorizationSetLink} to AuthorizationSetLink{agacAuthorization}
+}
+
+
+
+
+
+
 
 relationship OneToMany{
   AuthorizationSet{authorizationLink} to AuthorizationLink{authorizationSet}
-}
-
-relationship OneToMany{
-  AuthorizationSetLink{authorizationSet} to AuthorizationSet{authorizationSetLink}
 }
 
 relationship OneToMany{
@@ -104,7 +113,6 @@ relationship OneToMany{
   AGACOrganization{agacUserLink} to AGACUserLink{agacOrganization}
 }
 
- 
 enum Level {
     ROOT, SUB
 }

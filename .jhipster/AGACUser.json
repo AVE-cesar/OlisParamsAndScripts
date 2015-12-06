@@ -148,6 +148,7 @@
   "changelogDate": "20151205152004",
   "dto": "no",
   "pagination": "no",
+  "javadoc": "table des utilisateurs",
   "fieldsContainLocalDate": true,
   "fieldsContainCustomTime": true
 }

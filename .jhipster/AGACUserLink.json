@@ -57,6 +57,7 @@
   "changelogDate": "20151205153735",
   "dto": "no",
   "pagination": "no",
+  "javadoc": "table de relations entre les",
   "fieldsContainLocalDate": true,
   "fieldsContainCustomTime": true
 }

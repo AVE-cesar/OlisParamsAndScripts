@@ -2,27 +2,27 @@
   "relationships": [
     {
       "relationshipId": 1,
-      "relationshipName": "agacUser",
-      "relationshipFieldName": "agacUser",
-      "otherEntityName": "aGACUser",
+      "relationshipName": "agacAuthorization",
+      "relationshipFieldName": "agacAuthorization",
+      "otherEntityName": "aGACAuthorization",
       "relationshipType": "many-to-one",
       "otherEntityField": "id"
     },
     {
       "relationshipId": 2,
-      "relationshipName": "agacAuthorization",
-      "relationshipFieldName": "agacAuthorization",
-      "otherEntityName": "aGACAuthorization",
-      "relationshipType": "one-to-many",
-      "otherEntityRelationshipName": "authorizationSetLink"
-    },
-    {
-      "relationshipId": 3,
       "relationshipName": "authorizationSet",
       "relationshipFieldName": "authorizationSet",
       "otherEntityName": "authorizationSet",
-      "relationshipType": "one-to-many",
-      "otherEntityRelationshipName": "authorizationSetLink"
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "agacUser",
+      "relationshipFieldName": "agacUser",
+      "otherEntityName": "aGACUser",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
     }
   ],
   "fields": [
@@ -65,6 +65,7 @@
   "changelogDate": "20151205153735",
   "dto": "no",
   "pagination": "no",
+  "javadoc": "table de relations entre les",
   "fieldsContainLocalDate": true,
   "fieldsContainCustomTime": true
 }

@@ -18,7 +18,7 @@ import com.caceis.olis.paramsandscripts.domain.enumeration.Gender;
 import com.caceis.olis.paramsandscripts.domain.enumeration.Language;
 
 /**
- * A AGACUser.
+ * table des utilisateurs
  */
 @Entity
 @Table(name = "agacuser")

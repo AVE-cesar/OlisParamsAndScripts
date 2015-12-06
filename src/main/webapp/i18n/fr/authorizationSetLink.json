@@ -22,9 +22,9 @@
             "creatorUserId": "CreatorUserId",
             "modificationDate": "ModificationDate",
             "updatorUserId": "UpdatorUserId",
-            "agacUser": "AgacUser",
             "agacAuthorization": "AgacAuthorization",
-            "authorizationSet": "AuthorizationSet"
+            "authorizationSet": "AuthorizationSet",
+            "agacUser": "AgacUser"
         }
     }
 }

@@ -49,6 +49,7 @@
   "changelogDate": "20151205151743",
   "dto": "no",
   "pagination": "no",
+  "javadoc": "table de relations entre les autorisations et les profiles",
   "fieldsContainLocalDate": true,
   "fieldsContainCustomTime": true
 }

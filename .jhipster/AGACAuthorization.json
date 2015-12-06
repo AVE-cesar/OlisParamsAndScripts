@@ -5,8 +5,8 @@
       "relationshipName": "authorizationSetLink",
       "relationshipFieldName": "authorizationSetLink",
       "otherEntityName": "authorizationSetLink",
-      "relationshipType": "many-to-one",
-      "otherEntityField": "id"
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "agacAuthorization"
     }
   ],
   "fields": [
@@ -32,5 +32,6 @@
   ],
   "changelogDate": "20151205153735",
   "dto": "no",
-  "pagination": "no"
+  "pagination": "no",
+  "javadoc": "tables de droits"
 }

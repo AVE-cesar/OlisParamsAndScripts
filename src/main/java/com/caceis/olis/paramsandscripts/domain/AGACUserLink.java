@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.Objects;
 
 /**
- * A AGACUserLink.
+ * table de relations entre les
  */
 @Entity
 @Table(name = "agacuser_link")

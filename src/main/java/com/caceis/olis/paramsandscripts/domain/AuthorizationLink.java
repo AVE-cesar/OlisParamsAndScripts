@@ -12,38 +12,38 @@ import java.util.Set;
 import java.util.Objects;
 
 /**
- * A AuthorizationLink.
+ * table de relations entre les autorisations et les profiles
  */
 @Entity
-@Table(name = "AUT_PRO_SVC")
+@Table(name = "authorization_link")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "authorizationlink")
 public class AuthorizationLink implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "AUT_PRO_SVC_IDE")
+	@Column(name = "ID")
     private Long id;
 
-    @Column(name = "IDE_STA")
+    @Column(name = "status")
     private Long status;
 
-    @Column(name = "VAL_STT_DTE")
+    @Column(name = "validity_start_date")
     private LocalDate validityStartDate;
 
-    @Column(name = "VAL_END_DTE")
+    @Column(name = "validity_end_date")
     private LocalDate validityEndDate;
 
-    @Column(name = "CRE_DTE")
+    @Column(name = "creation_date")
     private LocalDate creationDate;
 
-    @Column(name = "CRE_USR")
+    @Column(name = "creator_user_id")
     private Long creatorUserId;
 
-    @Column(name = "UPD_DTE")
+    @Column(name = "modification_date")
     private LocalDate modificationDate;
 
-    @Column(name = "UPD_USR")
+    @Column(name = "updator_user_id")
     private Long updatorUserId;
 
     @ManyToOne

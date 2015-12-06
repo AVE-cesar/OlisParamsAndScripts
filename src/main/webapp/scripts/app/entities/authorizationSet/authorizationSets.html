@@ -27,7 +27,6 @@
                     <th translate="global.field.id">ID</th>
                     <th translate="olisParamsAndScriptsApp.authorizationSet.code">Code</th>
                     <th translate="olisParamsAndScriptsApp.authorizationSet.name">Name</th>
-                    <th translate="olisParamsAndScriptsApp.authorizationSet.authorizationSetLink">authorizationSetLink</th>
                     <th></th>
                 </tr>
             </thead>
@@ -36,9 +35,6 @@
                     <td><a ui-sref="authorizationSet.detail({id:authorizationSet.id})">{{authorizationSet.id}}</a></td>
                     <td>{{authorizationSet.code}}</td>
                     <td>{{authorizationSet.name}}</td>
-                    <td>
-                        <a ui-sref="authorizationSetLink.detail({id:authorizationSet.authorizationSetLink.id})">{{authorizationSet.authorizationSetLink.id}}</a>
-                    </td>
                     <td>
                         <button type="submit"
                                 ui-sref="authorizationSet.detail({id:authorizationSet.id})"

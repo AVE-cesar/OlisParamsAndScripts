@@ -13,34 +13,36 @@ import java.util.Set;
 import java.util.Objects;
 
 /**
- * A AuthorizationSet.
+ * table des profiles
  */
 @Entity
-@Table(name = "authorization_set")
+@Table(name = "AUT_PRO")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "authorizationset")
 public class AuthorizationSet implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID")
+	@Column(name = "AUT_PRO_IDE")
     private Long id;
 
     @Size(max = 100)
-    @Column(name = "code", length = 100)
+    @Column(name = "PRO_CDE", length = 100)
     private String code;
 
     @Size(max = 100)
-    @Column(name = "name", length = 100)
+    @Column(name = "PRO_LBL", length = 100)
     private String name;
 
     @OneToMany(mappedBy = "authorizationSet")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AuthorizationLink> authorizationLinks = new HashSet<>();
+    private Set<AuthorizationSetLink> authorizationSetLinks = new HashSet<>();
 
-    @ManyToOne
-    private AuthorizationSetLink authorizationSetLink;
+    @OneToMany(mappedBy = "authorizationSet")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<AuthorizationLink> authorizationLinks = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -66,20 +68,20 @@ public class AuthorizationSet implements Serializable {
         this.name = name;
     }
 
+    public Set<AuthorizationSetLink> getAuthorizationSetLinks() {
+        return authorizationSetLinks;
+    }
+
+    public void setAuthorizationSetLinks(Set<AuthorizationSetLink> authorizationSetLinks) {
+        this.authorizationSetLinks = authorizationSetLinks;
+    }
+
     public Set<AuthorizationLink> getAuthorizationLinks() {
         return authorizationLinks;
     }
 
     public void setAuthorizationLinks(Set<AuthorizationLink> authorizationLinks) {
         this.authorizationLinks = authorizationLinks;
-    }
-
-    public AuthorizationSetLink getAuthorizationSetLink() {
-        return authorizationSetLink;
-    }
-
-    public void setAuthorizationSetLink(AuthorizationSetLink authorizationSetLink) {
-        this.authorizationSetLink = authorizationSetLink;
     }
 
     @Override

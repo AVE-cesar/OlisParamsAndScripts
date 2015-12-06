@@ -18,7 +18,7 @@ import com.caceis.olis.paramsandscripts.domain.enumeration.Level;
 import com.caceis.olis.paramsandscripts.domain.enumeration.BoolValue;
 
 /**
- * A AGACOrganization.
+ * table des organisations
  */
 @Entity
 @Table(name = "agacorganization")

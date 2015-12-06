@@ -32,6 +32,8 @@
                     <th translate="olisParamsAndScriptsApp.authorizationSetLink.creatorUserId">CreatorUserId</th>
                     <th translate="olisParamsAndScriptsApp.authorizationSetLink.modificationDate">ModificationDate</th>
                     <th translate="olisParamsAndScriptsApp.authorizationSetLink.updatorUserId">UpdatorUserId</th>
+                    <th translate="olisParamsAndScriptsApp.authorizationSetLink.agacAuthorization">agacAuthorization</th>
+                    <th translate="olisParamsAndScriptsApp.authorizationSetLink.authorizationSet">authorizationSet</th>
                     <th translate="olisParamsAndScriptsApp.authorizationSetLink.agacUser">agacUser</th>
                     <th></th>
                 </tr>
@@ -46,6 +48,12 @@
                     <td>{{authorizationSetLink.creatorUserId}}</td>
                         <td>{{authorizationSetLink.modificationDate | date:'mediumDate'}}</td>
                     <td>{{authorizationSetLink.updatorUserId}}</td>
+                    <td>
+                        <a ui-sref="aGACAuthorization.detail({id:authorizationSetLink.agacAuthorization.id})">{{authorizationSetLink.agacAuthorization.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="authorizationSet.detail({id:authorizationSetLink.authorizationSet.id})">{{authorizationSetLink.authorizationSet.id}}</a>
+                    </td>
                     <td>
                         <a ui-sref="aGACUser.detail({id:authorizationSetLink.agacUser.id})">{{authorizationSetLink.agacUser.id}}</a>
                     </td>

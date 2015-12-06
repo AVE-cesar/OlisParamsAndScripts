@@ -27,7 +27,6 @@
                     <th translate="global.field.id">ID</th>
                     <th translate="olisParamsAndScriptsApp.aGACAuthorization.code">Code</th>
                     <th translate="olisParamsAndScriptsApp.aGACAuthorization.name">Name</th>
-                    <th translate="olisParamsAndScriptsApp.aGACAuthorization.authorizationSetLink">authorizationSetLink</th>
                     <th></th>
                 </tr>
             </thead>
@@ -36,9 +35,6 @@
                     <td><a ui-sref="aGACAuthorization.detail({id:aGACAuthorization.id})">{{aGACAuthorization.id}}</a></td>
                     <td>{{aGACAuthorization.code}}</td>
                     <td>{{aGACAuthorization.name}}</td>
-                    <td>
-                        <a ui-sref="authorizationSetLink.detail({id:aGACAuthorization.authorizationSetLink.id})">{{aGACAuthorization.authorizationSetLink.id}}</a>
-                    </td>
                     <td>
                         <button type="submit"
                                 ui-sref="aGACAuthorization.detail({id:aGACAuthorization.id})"

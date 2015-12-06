@@ -1,6 +1,5 @@
 package com.caceis.olis.paramsandscripts.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import java.time.LocalDate;
@@ -13,52 +12,48 @@ import java.util.Set;
 import java.util.Objects;
 
 /**
- * A AuthorizationSetLink.
+ * table de relations entre les
  */
 @Entity
-@Table(name = "authorization_set_link")
+@Table(name = "AUT_PRO_SVC")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "authorizationsetlink")
 public class AuthorizationSetLink implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID")
+	@Column(name = "AUT_PRO_SVC_IDE")
     private Long id;
 
-    @Column(name = "status")
+    @Column(name = "IDE_STA")
     private Long status;
 
-    @Column(name = "validity_start_date")
+    @Column(name = "VAL_STT_DTE")
     private LocalDate validityStartDate;
 
-    @Column(name = "validity_end_date")
+    @Column(name = "VAL_END_DTE")
     private LocalDate validityEndDate;
 
-    @Column(name = "creation_date")
+    @Column(name = "CRE_DTE")
     private LocalDate creationDate;
 
-    @Column(name = "creator_user_id")
+    @Column(name = "CRE_USR")
     private Long creatorUserId;
 
-    @Column(name = "modification_date")
+    @Column(name = "UPD_DTE")
     private LocalDate modificationDate;
 
-    @Column(name = "updator_user_id")
+    @Column(name = "UPD_USR")
     private Long updatorUserId;
 
     @ManyToOne
+    private AGACAuthorization agacAuthorization;
+
+    @ManyToOne
+    private AuthorizationSet authorizationSet;
+
+    @ManyToOne
     private AGACUser agacUser;
-
-    @OneToMany(mappedBy = "authorizationSetLink")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AGACAuthorization> agacAuthorizations = new HashSet<>();
-
-    @OneToMany(mappedBy = "authorizationSetLink")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AuthorizationSet> authorizationSets = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -124,28 +119,28 @@ public class AuthorizationSetLink implements Serializable {
         this.updatorUserId = updatorUserId;
     }
 
+    public AGACAuthorization getAgacAuthorization() {
+        return agacAuthorization;
+    }
+
+    public void setAgacAuthorization(AGACAuthorization aGACAuthorization) {
+        this.agacAuthorization = aGACAuthorization;
+    }
+
+    public AuthorizationSet getAuthorizationSet() {
+        return authorizationSet;
+    }
+
+    public void setAuthorizationSet(AuthorizationSet authorizationSet) {
+        this.authorizationSet = authorizationSet;
+    }
+
     public AGACUser getAgacUser() {
         return agacUser;
     }
 
     public void setAgacUser(AGACUser aGACUser) {
         this.agacUser = aGACUser;
-    }
-
-    public Set<AGACAuthorization> getAgacAuthorizations() {
-        return agacAuthorizations;
-    }
-
-    public void setAgacAuthorizations(Set<AGACAuthorization> aGACAuthorizations) {
-        this.agacAuthorizations = aGACAuthorizations;
-    }
-
-    public Set<AuthorizationSet> getAuthorizationSets() {
-        return authorizationSets;
-    }
-
-    public void setAuthorizationSets(Set<AuthorizationSet> authorizationSets) {
-        this.authorizationSets = authorizationSets;
     }
 
     @Override

@@ -1,19 +1,19 @@
 package com.caceis.olis.paramsandscripts.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
-
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
 
 /**
- * A AGACAuthorization.
+ * tables de droits
  */
 @Entity
 @Table(name = "AUT_SVC")
@@ -35,8 +35,10 @@ public class AGACAuthorization implements Serializable {
     @Column(name = "SVC_LIB", length = 100)
     private String name;
 
-    
-    private AuthorizationSetLink authorizationSetLink;
+    @OneToMany(mappedBy = "agacAuthorization")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<AuthorizationSetLink> authorizationSetLinks = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -62,12 +64,12 @@ public class AGACAuthorization implements Serializable {
         this.name = name;
     }
 
-    public AuthorizationSetLink getAuthorizationSetLink() {
-        return authorizationSetLink;
+    public Set<AuthorizationSetLink> getAuthorizationSetLinks() {
+        return authorizationSetLinks;
     }
 
-    public void setAuthorizationSetLink(AuthorizationSetLink authorizationSetLink) {
-        this.authorizationSetLink = authorizationSetLink;
+    public void setAuthorizationSetLinks(Set<AuthorizationSetLink> authorizationSetLinks) {
+        this.authorizationSetLinks = authorizationSetLinks;
     }
 
     @Override

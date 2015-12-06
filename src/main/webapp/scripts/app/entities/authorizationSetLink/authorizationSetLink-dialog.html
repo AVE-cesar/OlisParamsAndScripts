@@ -57,6 +57,18 @@
         </div>
 
         <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.authorizationSetLink.agacAuthorization" for="field_agacAuthorization">agacAuthorization</label>
+            <select class="form-control" id="field_agacAuthorization" name="agacAuthorization" ng-model="authorizationSetLink.agacAuthorization" ng-options="aGACAuthorization as aGACAuthorization.id for aGACAuthorization in agacauthorizations track by aGACAuthorization.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="olisParamsAndScriptsApp.authorizationSetLink.authorizationSet" for="field_authorizationSet">authorizationSet</label>
+            <select class="form-control" id="field_authorizationSet" name="authorizationSet" ng-model="authorizationSetLink.authorizationSet" ng-options="authorizationSet as authorizationSet.id for authorizationSet in authorizationsets track by authorizationSet.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
             <label translate="olisParamsAndScriptsApp.authorizationSetLink.agacUser" for="field_agacUser">agacUser</label>
             <select class="form-control" id="field_agacUser" name="agacUser" ng-model="authorizationSetLink.agacUser" ng-options="aGACUser as aGACUser.id for aGACUser in agacusers track by aGACUser.id">
                 <option value=""></option>

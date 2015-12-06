@@ -17,8 +17,8 @@
             },
             "code": "Code",
             "name": "Name",
-            "authorizationLink": "AuthorizationLink",
-            "authorizationSetLink": "AuthorizationSetLink"
+            "authorizationSetLink": "AuthorizationSetLink",
+            "authorizationLink": "AuthorizationLink"
         }
     }
 }
