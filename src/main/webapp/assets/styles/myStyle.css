@@ -1,4 +1,31 @@
+#stickyHeader {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	overflow: visible;
+	z-index: 99;
+	padding-top: 0px;
+	padding-bottom: 3px;
+	border-bottom: solid white 2px;
+	background-color: #ffffff;
+	-webkit-box-shadow: 0px 5px 15px 0px #bfbfbf;
+	box-shadow: 0px 5px 15px 0px #bfbfbf;
+	height: 59px;}
 
+#stickyFooter {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	overflow: visible;
+	z-index: 99;
+	padding-top: 5px;
+	padding-bottom: 3px;
+	border-top: solid white 2px;
+	background-color: #ffffff;
+	-webkit-box-shadow: 0px -5px 15px 0px #bfbfbf;
+	box-shadow: 0px -5px 15px 0px #bfbfbf;
+	height: 34px;}
+	
 /* One can also turn on/off specific axis. Defaults to both on. */
 textarea { resize:vertical; } /* none|horizontal|vertical|both */
 
@@ -8,7 +35,7 @@ textarea { resize:vertical; } /* none|horizontal|vertical|both */
 }
 
 
-/* pour la combo éditable */
+/* pour la combo ï¿½ditable */
 <!-- Select2 theme -->
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
 

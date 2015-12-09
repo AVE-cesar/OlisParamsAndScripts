@@ -23,7 +23,7 @@ angular.module('olisParamsAndScriptsApp')
         };
 
         $scope.refresh = function () {
-            $scope.loadAll();
+            //$scope.loadAll();
             $scope.clear();
         };
 
