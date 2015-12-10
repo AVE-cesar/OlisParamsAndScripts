@@ -100,6 +100,8 @@ public class ReportResource {
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public void reIndexAllReports() {
+    	reportRepository.readReportByName("toto");
+    	
         log.debug("REST request to re-index all reports");
         reportRepository.findAll().forEach(p -> reportSearchRepository.index(p));
     }
