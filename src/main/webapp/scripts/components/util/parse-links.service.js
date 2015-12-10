@@ -3,6 +3,7 @@
 angular.module('olisParamsAndScriptsApp')
     .service('ParseLinks', function () {
         this.parse = function (header) {
+        
             if (header.length == 0) {
                 throw new Error("input must not be of zero length");
             }

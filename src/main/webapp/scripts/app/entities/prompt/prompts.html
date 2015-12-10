@@ -35,8 +35,8 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
-                <tr ng-repeat="prompt in prompts track by prompt.id">
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="prompt in prompts track by prompt.id">                
                     <td><a ui-sref="prompt.detail({id:prompt.id})">{{prompt.id}}</a></td>
                     <td>{{prompt.name}}</td>
                     <td>{{prompt.systemName}}</td>
