@@ -42,7 +42,7 @@
             </select-->
             
             <ui-select ng-model="datasourcePosition.datasource" theme="bootstrap" ng-disabled="disabled" style="min-width: 300px;">
-		    <ui-select-match placeholder="Select a datasource in the list or search by his name or id">{{$select.selected.name}}</ui-select-match>
+		    <ui-select-match placeholder="Select a datasource in the list or search by his name or id">{{$select.selected.type}}</ui-select-match>
 		    <ui-select-choices repeat="datasource in datasources | propsFilter: {type: $select.search, id: $select.search} | orderBy: 'id'">
 		      <div ng-bind-html="datasource.type | highlight: $select.search"></div>
 		      <small>
